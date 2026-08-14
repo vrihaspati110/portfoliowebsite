@@ -1,17 +1,412 @@
 ---
-
+import VideoEmbed from '../components/VideoEmbed.astro';
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vrihaspati Tiwari | Post-Production</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --blue: #0011ff;
+        --black: #050505;
+        --dark-grey: #111111;
+        --white: #f9f9f9; /* Slightly off-white to match the image reference */
+        --font-head: 'Inter', sans-serif;
+        --font-body: 'Source Code Pro', monospace;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: var(--white);
+        color: var(--black);
+        -webkit-font-smoothing: antialiased;
+      }
+      
+      /* Global Layout Utilities */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+      .section-padding {
+        padding: 8rem 0;
+      }
+      
+      /* The Global Typography Pattern */
+      .section-label {
+        font-family: var(--font-head);
+        color: var(--blue);
+        font-size: 0.85rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        margin-bottom: 1.5rem;
+        display: block;
+      }
+      .section-title {
+        font-family: var(--font-head);
+        font-size: clamp(2.5rem, 5vw, 4.5rem);
+        font-weight: 800;
+        text-transform: uppercase;
+        line-height: 1.05;
+        margin: 0 0 2.5rem 0;
+        max-width: 900px;
+      }
+      .section-body-wrapper {
+        display: flex;
+        justify-content: flex-end; /* This pushes the paragraph to the right */
+        margin-bottom: 3rem;
+      }
+      .section-body {
+        font-family: var(--font-body);
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: #444;
+        max-width: 650px;
+        margin: 0;
+      }
+      .btn {
+        font-family: var(--font-head);
+        display: inline-block;
+        padding: 1.2rem 2.5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-decoration: none;
+        letter-spacing: 1px;
+        font-size: 0.9rem;
+        transition: background 0.2s;
+      }
+      .btn-blue {
+        background: var(--blue);
+        color: #fff;
+      }
+      .btn-blue:hover {
+        background: #000cbf;
+      }
+
+      /* Specific Section Overrides */
+      /* Restore the Blue Hero Section */
+      .hero {
+        background-color: var(--blue);
+        color: #fff;
+      }
+      .hero .section-title,
+      .hero .section-label {
+        color: #fff; 
+      }
+      .hero .section-body {
+        color: rgba(255, 255, 255, 0.9); /* Lightens the monospace body text */
+      }
+      .btn-white {
+        background: #fff;
+        color: var(--blue);
+      }
+      .btn-white:hover {
+        background: #e6e6e6;
+      }
+      
+      /* Make sure the top nav text is white since it sits on the blue hero */
+      nav {
+        background-color: var(--blue);
+        color: #fff;
+      }
+      
+      /* Top Navigation */
+      nav {
+        display: flex;
+        justify-content: space-between;
+        padding: 2rem;
+        font-family: var(--font-head);
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 0.85rem;
+        background-color: var(--blue);
+        color: #ffffff; /* Forces the text to be white */
+      }
+
+      /* Services Section (Dark Mode) */
+      .services {
+        background: var(--dark-grey);
+        color: #fff;
+      }
+      .services .section-title {
+        color: #fff;
+      }
+      .services .section-body {
+        color: #aaa;
+      }
+      .service-list {
+        list-style: none;
+        padding: 0;
+        margin: 4rem 0 0 0;
+      }
+      .service-list li {
+        display: flex;
+        align-items: flex-start;
+        padding: 3rem 0;
+        border-bottom: 1px solid #222;
+      }
+      .service-list li:first-child {
+        border-top: 1px solid #222;
+      }
+      .service-number {
+        font-family: var(--font-body);
+        font-size: 1.5rem;
+        color: var(--blue);
+        width: 80px;
+      }
+      .service-content h3 {
+        font-family: var(--font-head);
+        font-size: 1.8rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        margin: 0 0 1rem 0;
+      }
+      .service-content p {
+        font-family: var(--font-body);
+        color: #888;
+        line-height: 1.6;
+        margin: 0;
+        max-width: 500px;
+      }
+
+      /* Portfolio Grid */
+      .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 4rem 3rem;
+        margin-top: 4rem;
+      }
+      
+/* About Section Side-by-Side Layout */
+      .about-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: start;
+        margin-top: 2rem;
+      }
+      .about-text .section-body {
+        max-width: 100%; /* Allows the text to fill its half of the grid */
+        margin-bottom: 2.5rem;
+      }
+      .about-image {
+        width: 100%;
+        height: auto;
+        border: 1px solid #eaeaea;
+        filter: grayscale(100%);
+        transition: filter 0.3s ease;
+      }
+      .about-image:hover {
+        filter: grayscale(0%);
+      }
+
+      @media (max-width: 768px) {
+        .about-split {
+          grid-template-columns: 1fr; /* Stacks them on mobile */
+          gap: 2rem;
+        }
+      }
+      
+      
+      /* Quote */
+      .quote {
+        background: var(--blue);
+        color: #fff;
+        text-align: center;
+      }
+      .quote-text {
+        font-family: var(--font-body);
+        font-size: 1.5rem;
+        line-height: 1.6;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      @media (max-width: 768px) {
+        .section-body-wrapper { justify-content: flex-start; }
+        .service-list li { flex-direction: column; gap: 1rem; }
+        .portfolio-grid { grid-template-columns: 1fr; }
+      }
+      /* Footer Section */
+      .site-footer {
+        padding: 4rem 0;
+        border-top: 1px solid #eaeaea;
+        margin-top: 4rem;
+        background-color: var(--white);
+      }
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: var(--font-body); /* Uses the monospace font */
+        font-size: 0.9rem;
+        color: #888;
+      }
+      .contact-email {
+        color: var(--black);
+        font-weight: 600;
+        letter-spacing: 0.5px;
+      }
+      
+      @media (max-width: 768px) {
+        .footer-content { 
+          flex-direction: column-reverse; 
+          gap: 1.5rem; 
+          text-align: center; 
+        }
+      }
+    </style>
+  </head>
+  <body>
+    
+    <nav>
+      <span>Vrihaspati Tiwari</span>
+      <span>Film Editor</span>
+    </nav>
+
+    <!-- Hero Section (Now matches the layout aesthetic) -->
+    <section class="hero section-padding">
+      <div class="container">
+        <span class="section-label">Welcome</span>
+        <h1 class="section-title">Finding stories, frame by frame </h1>
+        
+        <div class="section-body-wrapper">
+          <p class="section-body">
+            Expert in precision editing, and custom workflow solutions designed to elevate your visual narrative from the timeline to the final render.
+          </p>
+        </div>
+        
+        <a href="#work" class="btn btn-white">View Full Portfolio</a>
+      </div>
+    </section>
+
+ <!-- About Section -->
+    <section class="about section-padding">
+      <div class="container">
+        <span class="section-label">About Me</span>
+        <h2 class="section-title">Passionate Video Editor and Storyteller</h2>
+        
+        <div class="about-split">
+          <!-- Left Column: Text & Button -->
+          <div class="about-text">
+            <p class="section-body">
+              I'm a dedicated video editor with a keen eye for detail and a deep passion for storytelling. Whether it's a commercial, a social media clip, or a full-length film, I bring creativity, precision, and emotion to every project. Beyond the timeline, I like to write stories and consume audiobooks.
+            </p>
+            <a href="mailto:vrihaspatitiwari@proton.me" class="btn btn-blue">Contact Me</a>
+          </div>
+
+          <!-- Right Column: Image -->
+          <div class="about-image-col">
+            <img src="/profile.jpg" alt="Vrihaspati Tiwari" class="about-image" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services section-padding">
+      <div class="container">
+        <span class="section-label">My Expertise</span>
+        <h2 class="section-title">Editing Solutions Tailored to Your Needs</h2>
+        
+        <div class="section-body-wrapper">
+          <p class="section-body">
+            Comprehensive post-production services combining creative intuition with deep technical knowledge across DaVinci Resolve, Premiere Pro, and After Effects.
+          </p>
+        </div>
+
+        <ul class="service-list">
+          <li>
+            <span class="service-number">01</span>
+            <div class="service-content">
+              <h3>Narrative</h3>
+              <p>End-to-end editorial structuring, timeline assembly, and offline editing tailored for maximum impact.</p>
+            </div>
+          </li>
+          <li>
+            <span class="service-number">02</span>
+            <div class="service-content">
+              <h3>Advanced Compositing</h3>
+              <p>Complex Visual Effects with color management, node-based corrections, and precise visual balancing inside DaVinci Resolve and Fusion .</p>
+            </div>
+          </li>
+          <li>
+            <span class="service-number">03</span>
+            <div class="service-content">
+              <h3>Motion Graphics</h3>
+              <p>Dynamic title design, lower thirds, and advanced compositing workflows built in After Effects.</p>
+            </div>
+          </li>
+          <li>
+            <span class="service-number">04</span>
+            <div class="service-content">
+              <h3>Corporate Events</h3>
+              <p> Transforming corporate events and brand narratives into compelling visual stories. I deliver polished, high-impact video editing that elevates your professional message. </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    
+    
+
+    <!-- Portfolio Section -->
+    <section id="work" class="portfolio section-padding">
+      <div class="container">
+        <span class="section-label">Latest Projects</span>
+        <h2 class="section-title">Transforming Raw Footage into Masterpieces</h2>
+        
+        <div class="section-body-wrapper">
+          <p class="section-body">
+            A selection of recent commercial campaigns, documentary shorts, and motion design projects.
+          </p>
+        </div>
+        
+        <div class="portfolio-grid">
+          <VideoEmbed 
+            title="Narrative ShowReel" 
+            softwareTag="DaVinci Resolve"
+            videoUrl="https://player.vimeo.com/video/1217886375?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+          />
+          <VideoEmbed 
+            title="Asus Expertbook Launch Event AV" 
+            softwareTag="Premiere Pro"
+            videoUrl="https://player.vimeo.com/video/1218343736?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"" 
+          />
+          <VideoEmbed 
+            title="Documentary Motion Graphics Short" 
+            softwareTag="Fusion"
+            videoUrl="https://player.vimeo.com/video/1218371636?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+          />
+          <VideoEmbed 
+            title="Trailers And Promo" 
+            softwareTag="DaVinci Resolve"
+            videoUrl="https://www.youtube.com/embed/m8sACMMiOHM?si=6M2KXCfOUCD4TesE" 
+          />
+        </div>
+      </div>
+    </section>
+    
+<!-- Footer Section -->
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <p>&copy; 2026 Vrihaspati Tiwari. All rights reserved.</p>
+        <p class="contact-email">vrihaspatitiwari@proton.me</p>
+      </div>
+    </footer>
+    
+    <!-- Quote Section -->
+    <section class="quote section-padding">
+      <div class="container">
+        <p class="quote-text">
+          "Technical precision combined with a deep understanding of pacing and narrative structure."
+        </p>
+      </div>
+    </section>
+
+  </body>
 </html>

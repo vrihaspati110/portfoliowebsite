@@ -1,0 +1,17 @@
+/* src/styles/global.css */
+:root {
+  --blue: #0011ff;
+  --black: #111111;
+  --dark-grey: #1a1a1a;
+  --white: #ffffff;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--white);
+  color: var(--black);
+}
+
+/* ... paste the rest of your CSS classes here ... */
