@@ -7,7 +7,7 @@ import VideoEmbed from '../components/VideoEmbed.astro';
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vrihaspati Tiwari | Post-Production & Film Editor</title>
-    <meta name="description" content="Portfolio of Vrihaspati Tiwari — Film Editor and Post-Production Specialist. Narrative editing, advanced compositing, and custom workflow solutions in DaVinci Resolve, Premiere Pro, and After Effects." />
+    <meta name="description" content="Portfolio of Vrihaspati Tiwari — Film Editor and Post-Production Specialist. Narrative editing, commercial AVs, advanced compositing, and custom workflow solutions in DaVinci Resolve, Premiere Pro, and Fusion." />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
     <link rel="alternate icon" href="/favicon.ico?v=2" />
     <link rel="apple-touch-icon" href="/favicon.svg?v=2" />
@@ -15,13 +15,13 @@ import VideoEmbed from '../components/VideoEmbed.astro';
     <!-- Open Graph / Social Sharing -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Vrihaspati Tiwari | Post-Production & Film Editor" />
-    <meta property="og:description" content="Finding stories, frame by frame. Narrative editing, advanced compositing, and custom post-production workflows." />
+    <meta property="og:description" content="Finding stories, frame by frame. Narrative editing, commercial AVs, advanced compositing, and custom post-production workflows." />
     <meta property="og:image" content="/profile.jpg" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Vrihaspati Tiwari | Post-Production & Film Editor" />
-    <meta name="twitter:description" content="Finding stories, frame by frame. Narrative editing, advanced compositing, and custom post-production workflows." />
+    <meta name="twitter:description" content="Finding stories, frame by frame. Narrative editing, commercial AVs, advanced compositing, and custom post-production workflows." />
     <meta name="twitter:image" content="/profile.jpg" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,7 +32,7 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         --blue: #0011ff;
         --black: #050505;
         --dark-grey: #111111;
-        --white: #f9f9f9; /* Slightly off-white to match the image reference */
+        --white: #f9f9f9;
         --font-head: 'Inter', sans-serif;
         --font-body: 'Source Code Pro', monospace;
       }
@@ -80,7 +80,7 @@ import VideoEmbed from '../components/VideoEmbed.astro';
       }
       .section-body-wrapper {
         display: flex;
-        justify-content: flex-end; /* This pushes the paragraph to the right */
+        justify-content: flex-end;
         margin-bottom: 2.25rem;
       }
       .section-body {
@@ -100,7 +100,7 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         text-decoration: none;
         letter-spacing: 1px;
         font-size: 0.85rem;
-        transition: background 0.2s, transform 0.2s;
+        transition: background 0.2s, transform 0.2s, border-color 0.2s;
       }
       .btn:hover {
         transform: translateY(-2px);
@@ -112,20 +112,6 @@ import VideoEmbed from '../components/VideoEmbed.astro';
       .btn-blue:hover {
         background: #000cbf;
       }
-
-      /* Specific Section Overrides */
-      /* Restore the Blue Hero Section */
-      .hero {
-        background-color: var(--blue);
-        color: #fff;
-      }
-      .hero .section-title,
-      .hero .section-label {
-        color: #fff; 
-      }
-      .hero .section-body {
-        color: rgba(255, 255, 255, 0.9); /* Lightens the monospace body text */
-      }
       .btn-white {
         background: #fff;
         color: var(--blue);
@@ -133,8 +119,39 @@ import VideoEmbed from '../components/VideoEmbed.astro';
       .btn-white:hover {
         background: #e6e6e6;
       }
+      .btn-ghost {
+        background: transparent;
+        color: #ffffff;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        margin-left: 1rem;
+      }
+      .btn-ghost:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: #ffffff;
+      }
+
+      /* Hero Section */
+      .hero {
+        background-color: var(--blue);
+        color: #fff;
+      }
+      .hero-tc {
+        display: inline-block;
+        font-family: var(--font-body);
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.7);
+        letter-spacing: 1px;
+        margin-bottom: 0.75rem;
+      }
+      .hero .section-title,
+      .hero .section-label {
+        color: #fff; 
+      }
+      .hero .section-body {
+        color: rgba(255, 255, 255, 0.9);
+      }
       
-      /* Top Navigation */
+      /* Top Sticky Navigation */
       nav {
         position: sticky;
         top: 0;
@@ -167,6 +184,31 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         color: rgba(255, 255, 255, 0.7);
         font-weight: 400;
       }
+      .nav-availability {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: var(--font-body);
+        font-size: 0.75rem;
+        background: rgba(255, 255, 255, 0.12);
+        padding: 0.35rem 0.75rem;
+        border-radius: 999px;
+        color: rgba(255, 255, 255, 0.95);
+        letter-spacing: 0.3px;
+      }
+      .pulse-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background-color: #00ff66;
+        box-shadow: 0 0 8px #00ff66;
+        animation: pulse 2s infinite;
+      }
+      @keyframes pulse {
+        0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 255, 102, 0.7); }
+        70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(0, 255, 102, 0); }
+        100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 255, 102, 0); }
+      }
       .nav-links {
         display: flex;
         align-items: center;
@@ -196,7 +238,49 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         transform: translateY(-1px);
       }
 
-      /* Services Section (Dark Mode) */
+      /* Portfolio Section & Filter Tabs */
+      .filter-bar {
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+        margin: 2rem 0 2.5rem 0;
+      }
+      .filter-btn {
+        background: #ffffff;
+        border: 1px solid #e0e0e0;
+        font-family: var(--font-body);
+        font-size: 0.82rem;
+        font-weight: 600;
+        padding: 0.55rem 1.1rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #333;
+        transition: all 0.2s ease;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      .filter-btn:hover {
+        border-color: var(--blue);
+        color: var(--blue);
+      }
+      .filter-btn.active {
+        background: var(--blue);
+        border-color: var(--blue);
+        color: #ffffff;
+      }
+      .filter-count {
+        font-size: 0.72rem;
+        opacity: 0.8;
+      }
+      .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+        gap: 3rem 2.5rem;
+      }
+
+      /* Services Section (Cinematic Dark Mode) */
       .services {
         background: var(--dark-grey);
         color: #fff;
@@ -239,37 +323,9 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         color: #888;
         line-height: 1.6;
         margin: 0;
-        max-width: 500px;
+        max-width: 600px;
       }
 
-      /* AI Short Films Section (Cinematic Dark Mode) */
-      .ai-films {
-        background: var(--dark-grey);
-        color: #fff;
-        --card-title-color: #ffffff;
-        --card-tag-color: #5572ff;
-      }
-      .ai-films .section-title {
-        color: #fff;
-      }
-      .ai-films .section-body {
-        color: #aaa;
-      }
-      .ai-films-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-        gap: 2.5rem 2rem;
-        margin-top: 2rem;
-      }
-
-      /* Portfolio Grid */
-      .portfolio-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-        gap: 3rem 2.5rem;
-        margin-top: 2rem;
-      }
-      
       /* About Section Side-by-Side Layout */
       .about-split {
         display: grid;
@@ -279,7 +335,7 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         margin-top: 1.5rem;
       }
       .about-text .section-body {
-        max-width: 100%; /* Allows the text to fill its half of the grid */
+        max-width: 100%;
         margin-bottom: 2rem;
       }
       .about-image {
@@ -319,7 +375,7 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         display: flex;
         justify-content: space-between;
         align-items: center;
-        font-family: var(--font-body); /* Uses the monospace font */
+        font-family: var(--font-body);
         font-size: 0.9rem;
         color: #555;
       }
@@ -344,15 +400,22 @@ import VideoEmbed from '../components/VideoEmbed.astro';
           align-items: flex-start;
           padding: 1.2rem 1.5rem;
         }
+        .nav-availability {
+          display: none;
+        }
         .nav-links {
           gap: 1rem;
           flex-wrap: wrap;
           font-size: 0.8rem;
         }
+        .btn-ghost {
+          margin-left: 0;
+          margin-top: 0.75rem;
+          display: block;
+        }
         .section-body-wrapper { justify-content: flex-start; margin-bottom: 1.5rem; }
         .service-list li { flex-direction: column; gap: 0.75rem; padding: 1.5rem 0; }
         .portfolio-grid { grid-template-columns: 1fr; gap: 2rem; margin-top: 1.5rem; }
-        .ai-films-grid { grid-template-columns: 1fr; gap: 2rem; margin-top: 1.5rem; }
         .about-split {
           grid-template-columns: 1fr;
           gap: 2rem;
@@ -367,16 +430,22 @@ import VideoEmbed from '../components/VideoEmbed.astro';
   </head>
   <body>
     
+    <!-- Top Sticky Navigation -->
     <nav>
       <a href="#" class="nav-brand">
         <span>Vrihaspati Tiwari</span>
         <span class="role">/ Film Editor</span>
       </a>
+
+      <div class="nav-availability">
+        <span class="pulse-dot"></span>
+        <span>Available for Q4 2026 Projects</span>
+      </div>
+
       <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
         <li><a href="#work">Work</a></li>
-        <li><a href="#ai-films">AI Films</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
         <li><a href="mailto:vrihaspatitiwari@proton.me" class="nav-cta">Contact</a></li>
       </ul>
     </nav>
@@ -384,16 +453,168 @@ import VideoEmbed from '../components/VideoEmbed.astro';
     <!-- Hero Section -->
     <section class="hero section-padding">
       <div class="container">
-        <span class="section-label">Welcome</span>
+        <span class="hero-tc">TC 01:00:14:08 // 24.00 FPS</span>
+        <span class="section-label">Editorial & Post-Production</span>
         <h1 class="section-title">Finding stories, frame by frame</h1>
         
         <div class="section-body-wrapper">
           <p class="section-body">
-            Expert in precision editing, and custom workflow solutions designed to elevate your visual narrative from the timeline to the final render.
+            Specializing in dramatic narrative pacing, high-energy commercial keynotes, complex visual effects compositing, and custom post-production pipelines from assembly cut to final delivery.
           </p>
         </div>
         
-        <a href="#work" class="btn btn-white">View Full Portfolio</a>
+        <a href="#work" class="btn btn-white">Explore Selected Work</a>
+        <a href="mailto:vrihaspatitiwari@proton.me" class="btn btn-ghost">Discuss a Project</a>
+      </div>
+    </section>
+
+    <!-- Selected Work Section (Brought right after Hero) -->
+    <section id="work" class="portfolio section-padding">
+      <div class="container">
+        <span class="section-label">Selected Portfolio</span>
+        <h2 class="section-title">Crafting Visual Rhythm & Impact</h2>
+        
+        <div class="section-body-wrapper">
+          <p class="section-body">
+            A curated showcase of commercial launch AVs, dramatic narrative cuts, documentary motion design, and cutting-edge generative cinema.
+          </p>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="filter-bar">
+          <button class="filter-btn active" data-filter="all">All Projects <span class="filter-count">8</span></button>
+          <button class="filter-btn" data-filter="narrative">Narrative & Commercial <span class="filter-count">3</span></button>
+          <button class="filter-btn" data-filter="motion">Motion Graphics <span class="filter-count">2</span></button>
+          <button class="filter-btn" data-filter="ai-cinema">AI Cinema <span class="filter-count">3</span></button>
+        </div>
+        
+        <div class="portfolio-grid">
+          <VideoEmbed 
+            title="Narrative ShowReel" 
+            softwareTag="DaVinci Resolve"
+            role="Lead Editor & Colorist"
+            client="Selected Works"
+            logline="Dramatic pacing, tension building, and visual balancing across independent cinema timeline assemblies."
+            aspectBadge="16:9 DCI"
+            category="narrative"
+            videoUrl="https://www.youtube.com/embed/6rt-ju8_ZCU" 
+          />
+          <VideoEmbed 
+            title="Asus Expertbook Launch Event AV" 
+            softwareTag="Premiere Pro"
+            role="Lead Editor"
+            client="Asus India"
+            logline="High-energy product reveal AV blending live keynote multi-cam footage with dynamic 3D graphic cues."
+            aspectBadge="16:9 Widescreen"
+            category="narrative"
+            videoUrl="https://www.youtube.com/embed/hLZbPz2AAT8" 
+          />
+          <VideoEmbed 
+            title="Documentary Motion Graphics Short" 
+            softwareTag="Fusion"
+            role="Motion Design & Editorial"
+            client="Forensic Infographic Series"
+            logline="Documentary forensic infographic detailing the Ed Kemper case with bespoke kinetic typography and spatial tracking."
+            aspectBadge="9:16 Vertical"
+            category="motion"
+            videoUrl="https://www.youtube.com/embed/HhA2wiDv1qE" 
+          />
+          <VideoEmbed 
+            title="Phantom of Heilbronn" 
+            softwareTag="Fusion"
+            role="Motion Graphics & Assembly"
+            client="Forensic Short Documentary"
+            logline="Visual breakdown of Germany's infamous forensic investigation using fluid node-based animations and archival photos."
+            aspectBadge="9:16 Vertical"
+            category="motion"
+            videoUrl="https://www.youtube.com/embed/nbivzn0Iexo" 
+          />
+          <VideoEmbed 
+            title="Trailers And Promo" 
+            softwareTag="DaVinci Resolve"
+            role="Teaser Cut & Sound Design"
+            client="Qaafilah Studios"
+            logline="Official teaser for the short film Gandhi Virus, structured for theatrical tension and rapid pacing."
+            aspectBadge="2.39:1 Scope"
+            category="narrative"
+            videoUrl="https://www.youtube.com/embed/m8sACMMiOHM?si=6M2KXCfOUCD4TesE" 
+          />
+          <VideoEmbed 
+            title="Gunda | गुंडा" 
+            softwareTag="GenAI & Editorial"
+            role="Director, Editor & AI Artist"
+            client="Hindi AI Short Film"
+            logline="Mythic Varanasi crime narrative combining generative image generation, dramatic voiceover, and temporal pacing."
+            aspectBadge="16:9 Cinema"
+            category="ai-cinema"
+            videoUrl="https://www.youtube.com/embed/v1eOXEf8gDg" 
+          />
+          <VideoEmbed 
+            title="The Monkey’s Paw" 
+            softwareTag="GenAI & Sound Design"
+            role="AI Direction & Soundscape"
+            client="Horror Short Film"
+            logline="Atmospheric adaptation of the classic horror tale with layered sound design and psychological dread."
+            aspectBadge="16:9 Cinema"
+            category="ai-cinema"
+            videoUrl="https://www.youtube.com/embed/p5cs63L6H6g" 
+          />
+          <VideoEmbed 
+            title="The Country of the Blind" 
+            softwareTag="GenAI & DaVinci Resolve"
+            role="AI Cinema & Color Grading"
+            client="Fantasy Adventure Short"
+            logline="Cinematic fantasy journey exploring an isolated valley, focused on lighting continuity and color harmony."
+            aspectBadge="16:9 Cinema"
+            category="ai-cinema"
+            videoUrl="https://www.youtube.com/embed/Vm_16spxYD0" 
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Services & Pipeline Section (Cinematic Dark Mode) -->
+    <section id="services" class="services section-padding">
+      <div class="container">
+        <span class="section-label">Capabilities & Studio Pipeline</span>
+        <h2 class="section-title">Precision Post-Production & Workflow Solutions</h2>
+        
+        <div class="section-body-wrapper">
+          <p class="section-body">
+            Comprehensive post-production services combining creative storytelling with deep technical craft across DaVinci Resolve, Premiere Pro, and Fusion.
+          </p>
+        </div>
+
+        <ul class="service-list">
+          <li>
+            <span class="service-number">01</span>
+            <div class="service-content">
+              <h3>Narrative & Editorial Assembly</h3>
+              <p>End-to-end editorial structuring, dialogue rhythm, dramatic tension, and offline assembly tailored for maximum audience impact.</p>
+            </div>
+          </li>
+          <li>
+            <span class="service-number">02</span>
+            <div class="service-content">
+              <h3>Advanced Compositing & VFX</h3>
+              <p>Complex visual effects, node-based corrections, screen replacements, paint/roto, and seamless visual balancing inside Fusion and DaVinci Resolve.</p>
+            </div>
+          </li>
+          <li>
+            <span class="service-number">03</span>
+            <div class="service-content">
+              <h3>Motion Graphics & Kinetic Design</h3>
+              <p>Dynamic title design, lower thirds, brand reveal animations, and forensic documentary infographics built inside After Effects and Fusion.</p>
+            </div>
+          </li>
+          <li>
+            <span class="service-number">04</span>
+            <div class="service-content">
+              <h3>Remote Pipeline & High-Speed Turnaround</h3>
+              <p>Calibrated 10-bit color reference monitoring, ACES / YRGB color management, Blackmagic Cloud collaboration, Frame.io review cycles, and ProRes/DCP masters over a 1Gbps fiber pipeline.</p>
+            </div>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -407,7 +628,7 @@ import VideoEmbed from '../components/VideoEmbed.astro';
           <!-- Left Column: Text & Button -->
           <div class="about-text">
             <p class="section-body">
-              I'm a dedicated video editor with a keen eye for detail and a deep passion for storytelling. Whether it's a commercial, a social media clip, or a full-length film, I bring creativity, precision, and emotion to every project. Beyond the timeline, I like to write stories and consume audiobooks.
+              I'm a dedicated video editor with a keen eye for detail and a deep passion for storytelling. Whether it's a commercial, a social media clip, an AI-driven short, or a full-length film, I bring creativity, precision, and emotion to every project. Beyond the timeline, I write stories and consume audiobooks.
             </p>
             <a href="mailto:vrihaspatitiwari@proton.me" class="btn btn-blue">Contact Me</a>
           </div>
@@ -428,125 +649,6 @@ import VideoEmbed from '../components/VideoEmbed.astro';
       </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services section-padding">
-      <div class="container">
-        <span class="section-label">My Expertise</span>
-        <h2 class="section-title">Editing Solutions Tailored to Your Needs</h2>
-        
-        <div class="section-body-wrapper">
-          <p class="section-body">
-            Comprehensive post-production services combining creative intuition with deep technical knowledge across DaVinci Resolve, Premiere Pro, and After Effects.
-          </p>
-        </div>
-
-        <ul class="service-list">
-          <li>
-            <span class="service-number">01</span>
-            <div class="service-content">
-              <h3>Narrative</h3>
-              <p>End-to-end editorial structuring, timeline assembly, and offline editing tailored for maximum impact.</p>
-            </div>
-          </li>
-          <li>
-            <span class="service-number">02</span>
-            <div class="service-content">
-              <h3>Advanced Compositing</h3>
-              <p>Complex Visual Effects with color management, node-based corrections, and precise visual balancing inside DaVinci Resolve and Fusion.</p>
-            </div>
-          </li>
-          <li>
-            <span class="service-number">03</span>
-            <div class="service-content">
-              <h3>Motion Graphics</h3>
-              <p>Dynamic title design, lower thirds, and advanced compositing workflows built in After Effects.</p>
-            </div>
-          </li>
-          <li>
-            <span class="service-number">04</span>
-            <div class="service-content">
-              <h3>Corporate Events</h3>
-              <p>Transforming corporate events and brand narratives into compelling visual stories. I deliver polished, high-impact video editing that elevates your professional message.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="work" class="portfolio section-padding">
-      <div class="container">
-        <span class="section-label">Latest Projects</span>
-        <h2 class="section-title">Transforming Raw Footage into Masterpieces</h2>
-        
-        <div class="section-body-wrapper">
-          <p class="section-body">
-            A selection of recent commercial campaigns, documentary shorts, and motion design projects.
-          </p>
-        </div>
-        
-        <div class="portfolio-grid">
-          <VideoEmbed 
-            title="Narrative ShowReel" 
-            softwareTag="DaVinci Resolve"
-            videoUrl="https://www.youtube.com/embed/6rt-ju8_ZCU" 
-          />
-          <VideoEmbed 
-            title="Asus Expertbook Launch Event AV" 
-            softwareTag="Premiere Pro"
-            videoUrl="https://www.youtube.com/embed/hLZbPz2AAT8" 
-          />
-          <VideoEmbed 
-            title="Documentary Motion Graphics Short" 
-            softwareTag="Fusion"
-            videoUrl="https://www.youtube.com/embed/HhA2wiDv1qE" 
-          />
-          <VideoEmbed 
-            title="Phantom of Heilbronn" 
-            softwareTag="Fusion"
-            videoUrl="https://www.youtube.com/embed/nbivzn0Iexo" 
-          />
-          <VideoEmbed 
-            title="Trailers And Promo" 
-            softwareTag="DaVinci Resolve"
-            videoUrl="https://www.youtube.com/embed/m8sACMMiOHM?si=6M2KXCfOUCD4TesE" 
-          />
-        </div>
-      </div>
-    </section>
-
-    <!-- AI Short Films Section -->
-    <section id="ai-films" class="ai-films section-padding">
-      <div class="container">
-        <span class="section-label">Generative Cinema</span>
-        <h2 class="section-title">AI Short Films & Experimental Narratives</h2>
-        
-        <div class="section-body-wrapper">
-          <p class="section-body">
-            Pushing the boundaries of visual storytelling—combining generative AI cinematic tools with classic dramatic editorial pacing, color design, and soundscapes.
-          </p>
-        </div>
-        
-        <div class="ai-films-grid">
-          <VideoEmbed 
-            title="Gunda | गुंडा" 
-            softwareTag="GenAI & Editorial"
-            videoUrl="https://www.youtube.com/embed/v1eOXEf8gDg" 
-          />
-          <VideoEmbed 
-            title="The Monkey’s Paw" 
-            softwareTag="GenAI & Sound Design"
-            videoUrl="https://www.youtube.com/embed/p5cs63L6H6g" 
-          />
-          <VideoEmbed 
-            title="The Country of the Blind" 
-            softwareTag="GenAI & DaVinci Resolve"
-            videoUrl="https://www.youtube.com/embed/Vm_16spxYD0" 
-          />
-        </div>
-      </div>
-    </section>
-
     <!-- Quote Section -->
     <section class="quote section-padding">
       <div class="container">
@@ -563,6 +665,30 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         <a href="mailto:vrihaspatitiwari@proton.me" class="contact-email">vrihaspatitiwari@proton.me</a>
       </div>
     </footer>
+
+    <!-- Interactive Client-side Filter Script -->
+    <script>
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const cards = document.querySelectorAll('.portfolio-card');
+
+      filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterButtons.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          const filter = btn.getAttribute('data-filter');
+
+          cards.forEach(card => {
+            const category = card.getAttribute('data-category');
+            if (filter === 'all' || category === filter) {
+              (card as HTMLElement).style.display = 'flex';
+            } else {
+              (card as HTMLElement).style.display = 'none';
+            }
+          });
+        });
+      });
+    </script>
 
   </body>
 </html>

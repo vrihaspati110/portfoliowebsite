@@ -3,12 +3,26 @@ interface Props {
   videoUrl: string;
   title: string;
   softwareTag: string;
+  role?: string;
+  client?: string;
+  logline?: string;
+  aspectBadge?: string;
+  category?: string;
 }
 
-const { videoUrl, title, softwareTag } = Astro.props;
+const { 
+  videoUrl, 
+  title, 
+  softwareTag, 
+  role, 
+  client, 
+  logline, 
+  aspectBadge, 
+  category 
+} = Astro.props;
 ---
 
-<article class="portfolio-card">
+<article class="portfolio-card" data-category={category}>
   <div class="video-wrapper">
     <iframe 
       src={videoUrl} 
@@ -18,11 +32,22 @@ const { videoUrl, title, softwareTag } = Astro.props;
       referrerpolicy="strict-origin-when-cross-origin"
       allowfullscreen>
     </iframe>
+    {aspectBadge && <span class="aspect-badge">{aspectBadge}</span>}
   </div>
   <div class="card-details">
     <div class="title-group">
-      <h3>{title}</h3>
-      <span class="tag">{softwareTag}</span>
+      <div class="title-row">
+        <h3>{title}</h3>
+        <span class="tag">{softwareTag}</span>
+      </div>
+      {(role || client) && (
+        <p class="card-meta">
+          {role && <span class="role">{role}</span>}
+          {role && client && <span class="divider">/</span>}
+          {client && <span class="client">{client}</span>}
+        </p>
+      )}
+      {logline && <p class="card-logline">{logline}</p>}
     </div>
   </div>
 </article>
@@ -32,12 +57,16 @@ const { videoUrl, title, softwareTag } = Astro.props;
     display: flex;
     flex-direction: column;
     gap: 0.9rem;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease;
   }
   .portfolio-card:hover {
     transform: translateY(-4px);
   }
+  .portfolio-card.is-hidden {
+    display: none;
+  }
   .video-wrapper {
+    position: relative;
     width: 100%;
     aspect-ratio: 16 / 9;
     background: #111;
@@ -48,24 +77,73 @@ const { videoUrl, title, softwareTag } = Astro.props;
     height: 100%;
     border: 0;
   }
+  .aspect-badge {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: rgba(5, 5, 5, 0.85);
+    backdrop-filter: blur(6px);
+    color: rgba(255, 255, 255, 0.85);
+    font-family: 'Source Code Pro', monospace;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 0.2rem 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    pointer-events: none;
+  }
   .card-details {
+    display: flex;
+    flex-direction: column;
+  }
+  .title-group {
+    display: flex;
+    flex-direction: column;
+  }
+  .title-row {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 0.35rem;
   }
-  .title-group h3 {
-    margin: 0 0 0.35rem 0;
+  .title-row h3 {
+    margin: 0;
     font-size: 1.15rem;
     font-weight: 800;
     color: var(--card-title-color, #111);
     text-transform: uppercase;
     font-family: 'Inter', sans-serif;
+    line-height: 1.25;
   }
   .tag {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     font-weight: 600;
     color: var(--card-tag-color, #0011ff);
     font-family: 'Source Code Pro', monospace;
     text-transform: uppercase;
+    white-space: nowrap;
+    letter-spacing: 0.3px;
+  }
+  .card-meta {
+    margin: 0 0 0.35rem 0;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 0.82rem;
+    color: var(--card-meta-color, #666);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+  }
+  .card-meta .divider {
+    color: var(--card-tag-color, #0011ff);
+    opacity: 0.6;
+  }
+  .card-logline {
+    margin: 0;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--card-logline-color, #444);
   }
 </style>
