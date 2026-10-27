@@ -54,7 +54,7 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         padding: 0 2rem;
       }
       .section-padding {
-        padding: 8rem 0;
+        padding: 5.5rem 0;
       }
       
       /* The Global Typography Pattern */
@@ -65,28 +65,28 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 1.5px;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
         display: block;
       }
       .section-title {
         font-family: var(--font-head);
-        font-size: clamp(2.5rem, 5vw, 4.5rem);
+        font-size: clamp(2.3rem, 4.5vw, 4.2rem);
         font-weight: 800;
         text-transform: uppercase;
         line-height: 1.05;
-        margin: 0 0 2.5rem 0;
+        margin: 0 0 1.75rem 0;
         max-width: 900px;
         overflow-wrap: break-word;
       }
       .section-body-wrapper {
         display: flex;
         justify-content: flex-end; /* This pushes the paragraph to the right */
-        margin-bottom: 3rem;
+        margin-bottom: 2.25rem;
       }
       .section-body {
         font-family: var(--font-body);
-        font-size: 1.1rem;
-        line-height: 1.7;
+        font-size: 1.05rem;
+        line-height: 1.65;
         color: #444;
         max-width: 650px;
         margin: 0;
@@ -94,13 +94,16 @@ import VideoEmbed from '../components/VideoEmbed.astro';
       .btn {
         font-family: var(--font-head);
         display: inline-block;
-        padding: 1.2rem 2.5rem;
+        padding: 1rem 2.25rem;
         font-weight: 700;
         text-transform: uppercase;
         text-decoration: none;
         letter-spacing: 1px;
-        font-size: 0.9rem;
-        transition: background 0.2s;
+        font-size: 0.85rem;
+        transition: background 0.2s, transform 0.2s;
+      }
+      .btn:hover {
+        transform: translateY(-2px);
       }
       .btn-blue {
         background: var(--blue);
@@ -136,7 +139,7 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 1.5rem 2rem;
+        padding: 1.2rem 2rem;
         font-family: var(--font-head);
         text-transform: uppercase;
         font-weight: 700;
@@ -200,12 +203,12 @@ import VideoEmbed from '../components/VideoEmbed.astro';
       .service-list {
         list-style: none;
         padding: 0;
-        margin: 4rem 0 0 0;
+        margin: 2.5rem 0 0 0;
       }
       .service-list li {
         display: flex;
         align-items: flex-start;
-        padding: 3rem 0;
+        padding: 2.2rem 0;
         border-bottom: 1px solid #222;
       }
       .service-list li:first-child {
@@ -213,16 +216,16 @@ import VideoEmbed from '../components/VideoEmbed.astro';
       }
       .service-number {
         font-family: var(--font-body);
-        font-size: 1.5rem;
+        font-size: 1.4rem;
         color: var(--blue);
-        width: 80px;
+        width: 70px;
       }
       .service-content h3 {
         font-family: var(--font-head);
-        font-size: 1.8rem;
+        font-size: 1.6rem;
         font-weight: 800;
         text-transform: uppercase;
-        margin: 0 0 1rem 0;
+        margin: 0 0 0.6rem 0;
       }
       .service-content p {
         font-family: var(--font-body);
@@ -248,29 +251,29 @@ import VideoEmbed from '../components/VideoEmbed.astro';
       .ai-films-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 3.5rem 2.5rem;
-        margin-top: 4rem;
+        gap: 2.5rem 2rem;
+        margin-top: 2rem;
       }
 
       /* Portfolio Grid */
       .portfolio-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-        gap: 4rem 3rem;
-        margin-top: 4rem;
+        gap: 3rem 2.5rem;
+        margin-top: 2rem;
       }
       
       /* About Section Side-by-Side Layout */
       .about-split {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 4rem;
+        gap: 3.5rem;
         align-items: start;
-        margin-top: 2rem;
+        margin-top: 1.5rem;
       }
       .about-text .section-body {
         max-width: 100%; /* Allows the text to fill its half of the grid */
-        margin-bottom: 2.5rem;
+        margin-bottom: 2rem;
       }
       .about-image {
         width: 100%;
@@ -289,10 +292,11 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         background: var(--blue);
         color: #fff;
         text-align: center;
+        padding: 5rem 0;
       }
       .quote-text {
         font-family: var(--font-body);
-        font-size: 1.5rem;
+        font-size: 1.4rem;
         line-height: 1.6;
         max-width: 800px;
         margin: 0 auto;
@@ -300,7 +304,7 @@ import VideoEmbed from '../components/VideoEmbed.astro';
 
       /* Footer Section */
       .site-footer {
-        padding: 4rem 0;
+        padding: 2.5rem 0;
         border-top: 1px solid #eaeaea;
         background-color: var(--white);
       }
@@ -325,29 +329,30 @@ import VideoEmbed from '../components/VideoEmbed.astro';
       }
 
       @media (max-width: 768px) {
-        .section-padding { padding: 4.5rem 0; }
+        .section-padding { padding: 3.5rem 0; }
+        .quote { padding: 3.5rem 0; }
         nav {
           flex-direction: column;
-          gap: 1.2rem;
+          gap: 1rem;
           align-items: flex-start;
-          padding: 1.5rem;
+          padding: 1.2rem 1.5rem;
         }
         .nav-links {
-          gap: 1.2rem;
+          gap: 1rem;
           flex-wrap: wrap;
           font-size: 0.8rem;
         }
-        .section-body-wrapper { justify-content: flex-start; }
-        .service-list li { flex-direction: column; gap: 1rem; }
-        .portfolio-grid { grid-template-columns: 1fr; }
-        .ai-films-grid { grid-template-columns: 1fr; }
+        .section-body-wrapper { justify-content: flex-start; margin-bottom: 1.5rem; }
+        .service-list li { flex-direction: column; gap: 0.75rem; padding: 1.5rem 0; }
+        .portfolio-grid { grid-template-columns: 1fr; gap: 2rem; margin-top: 1.5rem; }
+        .ai-films-grid { grid-template-columns: 1fr; gap: 2rem; margin-top: 1.5rem; }
         .about-split {
           grid-template-columns: 1fr;
           gap: 2rem;
         }
         .footer-content { 
           flex-direction: column-reverse; 
-          gap: 1.5rem; 
+          gap: 1.2rem; 
           text-align: center; 
         }
       }
