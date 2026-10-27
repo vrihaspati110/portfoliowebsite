@@ -136,10 +136,13 @@ import VideoEmbed from '../components/VideoEmbed.astro';
       
       /* Top Navigation */
       nav {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 1.2rem 2rem;
+        padding: 1.1rem 2rem;
         font-family: var(--font-head);
         text-transform: uppercase;
         font-weight: 700;
@@ -155,6 +158,10 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         color: #ffffff;
         text-decoration: none;
         letter-spacing: 0.5px;
+        transition: opacity 0.2s ease;
+      }
+      .nav-brand:hover {
+        opacity: 0.85;
       }
       .nav-brand .role {
         color: rgba(255, 255, 255, 0.7);
@@ -250,7 +257,7 @@ import VideoEmbed from '../components/VideoEmbed.astro';
       }
       .ai-films-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
         gap: 2.5rem 2rem;
         margin-top: 2rem;
       }
@@ -258,7 +265,7 @@ import VideoEmbed from '../components/VideoEmbed.astro';
       /* Portfolio Grid */
       .portfolio-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
         gap: 3rem 2.5rem;
         margin-top: 2rem;
       }
@@ -528,12 +535,12 @@ import VideoEmbed from '../components/VideoEmbed.astro';
           />
           <VideoEmbed 
             title="The Monkey’s Paw" 
-            softwareTag="AI Horror Short"
+            softwareTag="GenAI & Sound Design"
             videoUrl="https://www.youtube.com/embed/p5cs63L6H6g" 
           />
           <VideoEmbed 
             title="The Country of the Blind" 
-            softwareTag="AI Fantasy Adventure"
+            softwareTag="GenAI & DaVinci Resolve"
             videoUrl="https://www.youtube.com/embed/Vm_16spxYD0" 
           />
         </div>
