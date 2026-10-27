@@ -69,14 +69,12 @@ const {
     position: relative;
     width: 100%;
     aspect-ratio: 16 / 9;
-    background: #000;
+    background: #111;
     overflow: hidden;
-    border: 1px solid var(--card-border, rgba(255, 255, 255, 0.08));
     transition: box-shadow 0.3s ease, border-color 0.3s ease;
   }
   .portfolio-card:hover .video-wrapper {
-    box-shadow: 0 14px 35px var(--card-glow, rgba(59, 113, 255, 0.25));
-    border-color: var(--card-border-hover, rgba(59, 113, 255, 0.45));
+    box-shadow: 0 14px 35px var(--card-glow, rgba(10, 30, 226, 0.2));
   }
   .video-wrapper iframe {
     width: 100%;
@@ -87,7 +85,7 @@ const {
     position: absolute;
     bottom: 8px;
     right: 8px;
-    background: rgba(5, 5, 5, 0.88);
+    background: rgba(5, 5, 5, 0.85);
     backdrop-filter: blur(6px);
     color: rgba(255, 255, 255, 0.85);
     font-family: 'Source Code Pro', monospace;
@@ -100,7 +98,7 @@ const {
     transition: border-color 0.3s ease, color 0.3s ease;
   }
   .portfolio-card:hover .aspect-badge {
-    border-color: var(--card-tag-color, #3b71ff);
+    border-color: rgba(10, 30, 226, 0.6);
     color: #ffffff;
   }
   .card-details {
@@ -122,7 +120,7 @@ const {
     margin: 0;
     font-size: 1.15rem;
     font-weight: 800;
-    color: var(--card-title-color, #f0f2f5);
+    color: var(--card-title-color, #111);
     font-family: 'Inter', sans-serif;
     line-height: 1.25;
     letter-spacing: -0.2px;
@@ -130,7 +128,7 @@ const {
   .tag {
     font-size: 0.78rem;
     font-weight: 600;
-    color: var(--card-tag-color, #3b71ff);
+    color: var(--card-tag-color, #0a1ee2);
     font-family: 'Source Code Pro', monospace;
     text-transform: uppercase;
     white-space: nowrap;
@@ -140,14 +138,14 @@ const {
     margin: 0 0 0.35rem 0;
     font-family: 'Source Code Pro', monospace;
     font-size: 0.82rem;
-    color: var(--card-meta-color, #8e94a0);
+    color: var(--card-meta-color, #666);
     display: flex;
     align-items: center;
     gap: 0.4rem;
     flex-wrap: wrap;
   }
   .card-meta .divider {
-    color: var(--card-tag-color, #3b71ff);
+    color: var(--card-tag-color, #0a1ee2);
     opacity: 0.6;
   }
   .card-logline {
@@ -155,6 +153,6 @@ const {
     font-family: 'Source Code Pro', monospace;
     font-size: 0.85rem;
     line-height: 1.5;
-    color: var(--card-logline-color, #bac0cc);
+    color: var(--card-logline-color, #444);
   }
 </style>
