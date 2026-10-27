@@ -140,15 +140,6 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         background: var(--blue-gradient);
         color: #fff;
       }
-      .hero-tc {
-        display: inline-block;
-        font-family: var(--font-body);
-        font-size: 0.78rem;
-        font-weight: 600;
-        color: rgba(255, 255, 255, 0.78);
-        letter-spacing: 1.2px;
-        margin-bottom: 0.75rem;
-      }
       .hero .section-title {
         color: #fff; 
       }
@@ -195,29 +186,15 @@ import VideoEmbed from '../components/VideoEmbed.astro';
       .nav-availability {
         display: flex;
         align-items: center;
-        gap: 0.5rem;
         font-family: var(--font-body);
-        font-size: 0.75rem;
-        font-weight: 500;
+        font-size: 0.74rem;
+        font-weight: 600;
         background: rgba(255, 255, 255, 0.12);
-        padding: 0.35rem 0.85rem;
+        padding: 0.38rem 0.95rem;
         border-radius: 999px;
         color: rgba(255, 255, 255, 0.95);
-        letter-spacing: 0.2px;
-        border: 1px solid rgba(255, 255, 255, 0.15);
-      }
-      .pulse-dot {
-        width: 7px;
-        height: 7px;
-        border-radius: 50%;
-        background-color: #00ff66;
-        box-shadow: 0 0 8px #00ff66;
-        animation: pulse 2s infinite;
-      }
-      @keyframes pulse {
-        0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 255, 102, 0.7); }
-        70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(0, 255, 102, 0); }
-        100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 255, 102, 0); }
+        letter-spacing: 0.3px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
       }
       .nav-links {
         display: flex;
@@ -365,10 +342,10 @@ import VideoEmbed from '../components/VideoEmbed.astro';
       }
       .service-number {
         font-family: var(--font-body);
-        font-size: 1.05rem;
+        font-size: 1.25rem;
         font-weight: 700;
         color: #6a88ff;
-        width: 100px;
+        width: 65px;
         letter-spacing: 0.5px;
       }
       .service-content h3 {
@@ -387,7 +364,7 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         max-width: 600px;
       }
 
-      /* About Section Side-by-Side Layout with Camera HUD */
+      /* About Section Side-by-Side Layout */
       .about-split {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -403,54 +380,19 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         position: relative;
         width: 100%;
         overflow: hidden;
+        border-radius: 4px;
         border: 1px solid #e0e2e6;
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
         background: #000;
       }
       .about-image {
         width: 100%;
         height: auto;
-        filter: grayscale(100%);
-        transition: filter 0.4s ease, transform 0.4s ease;
         display: block;
+        transition: transform 0.4s ease;
       }
       .photo-frame:hover .about-image {
-        filter: grayscale(0%);
         transform: scale(1.02);
-      }
-      .camera-hud {
-        position: absolute;
-        left: 0;
-        right: 0;
-        padding: 0.75rem 1rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-family: var(--font-body);
-        font-size: 0.72rem;
-        color: rgba(255, 255, 255, 0.9);
-        background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
-        pointer-events: none;
-        letter-spacing: 0.6px;
-        font-weight: 600;
-      }
-      .bottom-hud {
-        top: auto;
-        bottom: 0;
-        background: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
-      }
-      .rec-dot {
-        display: inline-block;
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background: #ff2222;
-        box-shadow: 0 0 8px #ff2222;
-        margin-right: 0.35rem;
-        animation: recBlink 1.5s infinite;
-      }
-      @keyframes recBlink {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0.3; }
       }
       
       /* Quote */
@@ -464,9 +406,23 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         font-family: var(--font-body);
         font-size: 1.45rem;
         font-weight: 500;
-        line-height: 1.6;
-        max-width: 800px;
-        margin: 0 auto;
+        line-height: 1.65;
+        max-width: 820px;
+        margin: 0 auto 1.4rem auto;
+      }
+      .quote-author {
+        display: block;
+        font-family: var(--font-body);
+        font-size: 0.92rem;
+        font-style: normal;
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.95);
+        letter-spacing: 0.5px;
+      }
+      .quote-role {
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.82rem;
       }
 
       /* Footer Section */
@@ -547,8 +503,7 @@ import VideoEmbed from '../components/VideoEmbed.astro';
       </a>
 
       <div class="nav-availability">
-        <span class="pulse-dot"></span>
-        <span>Available for Q4 2026 Projects</span>
+        <span>Open for Narrative, Commercial & Post-Production</span>
       </div>
 
       <ul class="nav-links">
@@ -562,13 +517,12 @@ import VideoEmbed from '../components/VideoEmbed.astro';
     <!-- Hero Section -->
     <section class="hero section-padding">
       <div class="container">
-        <span class="hero-tc">TC 01:00:14:08 // 24.00 FPS</span>
         <span class="section-label">Editorial & Post-Production</span>
-        <h1 class="section-title">Finding Stories, Frame by Frame</h1>
+        <h1 class="section-title">Cutting for Emotion, Rhythm & Narrative Impact</h1>
         
         <div class="section-body-wrapper">
           <p class="section-body">
-            Specializing in dramatic narrative pacing, high-energy commercial keynotes, complex visual effects compositing, and custom post-production pipelines from assembly cut to final delivery.
+            Film and post-production editor specializing in dramatic narrative pacing, commercial campaigns, comedic timing, and precision sound design from assembly cut to final delivery.
           </p>
         </div>
         
@@ -599,11 +553,11 @@ import VideoEmbed from '../components/VideoEmbed.astro';
     <section id="work" class="portfolio section-padding">
       <div class="container">
         <span class="section-label">Selected Portfolio</span>
-        <h2 class="section-title">Crafting Visual Rhythm & Impact</h2>
+        <h2 class="section-title">Selected Works & Timeline Assemblies</h2>
         
         <div class="section-body-wrapper">
           <p class="section-body">
-            A curated showcase of commercial launch AVs, dramatic narrative cuts, documentary motion design, and cutting-edge generative cinema.
+            A showcase of independent narrative cuts, commercial launch AVs, comedy drama series, documentary motion design, and generative cinema.
           </p>
         </div>
 
@@ -724,64 +678,64 @@ import VideoEmbed from '../components/VideoEmbed.astro';
     <!-- Services & Pipeline Section (Cinematic Dark Mode) -->
     <section id="services" class="services section-padding">
       <div class="container">
-        <span class="section-label">Capabilities & Studio Pipeline</span>
-        <h2 class="section-title">Precision Post-Production & Workflow Solutions</h2>
+        <span class="section-label">Capabilities & Delivery</span>
+        <h2 class="section-title">Post-Production Services & Timeline Craft</h2>
         
         <div class="section-body-wrapper">
           <p class="section-body">
-            Comprehensive post-production services combining creative storytelling with deep technical craft across DaVinci Resolve, Premiere Pro, and Fusion.
+            Full-spectrum editorial and finishing craft combining narrative instincts with technical precision across DaVinci Resolve, Premiere Pro, and Fusion.
           </p>
         </div>
 
         <ul class="service-list">
           <li>
-            <span class="service-number">[ 01:00 ]</span>
+            <span class="service-number">01</span>
             <div class="service-content">
               <h3>Narrative & Editorial Assembly</h3>
               <p>End-to-end editorial structuring, dialogue rhythm, dramatic tension, and offline assembly tailored for maximum audience impact.</p>
             </div>
           </li>
           <li>
-            <span class="service-number">[ 02:00 ]</span>
+            <span class="service-number">02</span>
             <div class="service-content">
               <h3>Advanced Compositing & VFX</h3>
               <p>Complex visual effects, node-based corrections, screen replacements, paint/roto, and seamless visual balancing inside Fusion and DaVinci Resolve.</p>
             </div>
           </li>
           <li>
-            <span class="service-number">[ 03:00 ]</span>
+            <span class="service-number">03</span>
             <div class="service-content">
               <h3>Motion Graphics & Kinetic Design</h3>
               <p>Dynamic title design, lower thirds, brand reveal animations, and forensic documentary infographics built inside After Effects and Fusion.</p>
             </div>
           </li>
           <li>
-            <span class="service-number">[ 04:00 ]</span>
+            <span class="service-number">04</span>
             <div class="service-content">
-              <h3>Remote Pipeline & High-Speed Turnaround</h3>
-              <p>Calibrated 10-bit color reference monitoring, ACES / YRGB color management, Blackmagic Cloud collaboration, Frame.io review cycles, and ProRes/DCP masters over a 1Gbps fiber pipeline.</p>
+              <h3>Finishing, Color & Master Delivery</h3>
+              <p>Calibrated color reference monitoring, ACES / YRGB color management, seamless Frame.io review iterations, and broadcast-ready ProRes/DCP masters tailored for festivals, streaming, and theatrical release.</p>
             </div>
           </li>
         </ul>
       </div>
     </section>
 
-    <!-- About Section with Camera HUD -->
+    <!-- About Section -->
     <section id="about" class="about section-padding">
       <div class="container">
         <span class="section-label">About Me</span>
-        <h2 class="section-title">Passionate Video Editor and Storyteller</h2>
+        <h2 class="section-title">Behind the Timeline</h2>
         
         <div class="about-split">
           <!-- Left Column: Text & Button -->
           <div class="about-text">
             <p class="section-body">
-              I'm a dedicated video editor with a keen eye for detail and a deep passion for storytelling. Whether it's a commercial, a social media clip, an AI-driven short, or a full-length film, I bring creativity, precision, and emotion to every project. Beyond the timeline, I write stories and consume audiobooks.
+              I'm an editor and sound designer focused on narrative depth, comedic timing, and emotional resonance. Whether shaping an independent drama, a commercial campaign, an episodic comedy podcast, or an AI-assisted narrative, I approach every project with dedication to storytelling and audio-visual cohesion. Beyond the timeline, I write stories and listen to audiobooks.
             </p>
-            <a href="mailto:vrihaspatitiwari@proton.me" class="btn btn-blue">Contact Me</a>
+            <a href="mailto:vrihaspatitiwari@proton.me" class="btn btn-blue">Discuss a Project</a>
           </div>
 
-          <!-- Right Column: Image with Camera Slate HUD -->
+          <!-- Right Column: Profile Image -->
           <div class="about-image-col">
             <div class="photo-frame">
               <img 
@@ -793,14 +747,6 @@ import VideoEmbed from '../components/VideoEmbed.astro';
                 loading="lazy" 
                 decoding="async" 
               />
-              <div class="camera-hud top-hud">
-                <span class="hud-item"><span class="rec-dot"></span> REC</span>
-                <span class="hud-item">CAM A // 24.00 FPS</span>
-              </div>
-              <div class="camera-hud bottom-hud">
-                <span class="hud-item">5600K // 1/48</span>
-                <span class="hud-item">PRORES 422 HQ</span>
-              </div>
             </div>
           </div>
         </div>
@@ -811,8 +757,12 @@ import VideoEmbed from '../components/VideoEmbed.astro';
     <section class="quote section-padding">
       <div class="container">
         <p class="quote-text">
-          "Technical precision combined with a deep understanding of pacing and narrative structure."
+          “Cut for emotion first, story second, and rhythm third. What people remember is never the mechanics of the cut — it is how it made them feel.”
         </p>
+        <cite class="quote-author">
+          — Walter Murch, ACE
+          <span class="quote-role">/ Three-time Academy Award-Winning Editor & Sound Designer</span>
+        </cite>
       </div>
     </section>
 
