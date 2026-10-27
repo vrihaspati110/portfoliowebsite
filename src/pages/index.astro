@@ -609,8 +609,9 @@ import VideoEmbed from '../components/VideoEmbed.astro';
 
         <!-- Filter Bar -->
         <div class="filter-bar">
-          <button class="filter-btn active" data-filter="all">All Projects <span class="filter-count">8</span></button>
+          <button class="filter-btn active" data-filter="all">All Projects <span class="filter-count">9</span></button>
           <button class="filter-btn" data-filter="narrative">Narrative & Commercial <span class="filter-count">3</span></button>
+          <button class="filter-btn" data-filter="comedy-podcast">Comedy Drama Podcast <span class="filter-count">1</span></button>
           <button class="filter-btn" data-filter="motion">Motion Graphics <span class="filter-count">2</span></button>
           <button class="filter-btn" data-filter="ai-cinema">AI Cinema <span class="filter-count">3</span></button>
         </div>
@@ -665,6 +666,16 @@ import VideoEmbed from '../components/VideoEmbed.astro';
             aspectBadge="2.39:1 Scope"
             category="narrative"
             videoUrl="https://www.youtube.com/embed/m8sACMMiOHM?si=6M2KXCfOUCD4TesE" 
+          />
+          <VideoEmbed 
+            title="Aura Waala Shayar — Episode 9: K Bhootani" 
+            softwareTag="Premiere & Resolve"
+            role="Complete Post-Production"
+            client="Qaafilah Studios"
+            logline="End-to-end post-production for comedy drama podcast series — multi-cam editorial assembly, comedic timing, dialogue cleanup, sound design, and color grading."
+            aspectBadge="16:9 Widescreen"
+            category="comedy-podcast"
+            videoUrl="https://www.youtube.com/embed/5HPK9X6dwgg" 
           />
           <VideoEmbed 
             title="Gunda | गुंडा" 
@@ -816,8 +827,8 @@ import VideoEmbed from '../components/VideoEmbed.astro';
           const filter = btn.getAttribute('data-filter');
 
           cards.forEach(card => {
-            const category = card.getAttribute('data-category');
-            if (filter === 'all' || category === filter) {
+            const categories = (card.getAttribute('data-category') || '').split(' ');
+            if (filter === 'all' || categories.includes(filter)) {
               (card as HTMLElement).style.display = 'flex';
             } else {
               (card as HTMLElement).style.display = 'none';
