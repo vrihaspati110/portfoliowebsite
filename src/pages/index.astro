@@ -6,7 +6,23 @@ import VideoEmbed from '../components/VideoEmbed.astro';
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vrihaspati Tiwari | Post-Production</title>
+    <title>Vrihaspati Tiwari | Post-Production & Film Editor</title>
+    <meta name="description" content="Portfolio of Vrihaspati Tiwari — Film Editor and Post-Production Specialist. Narrative editing, advanced compositing, and custom workflow solutions in DaVinci Resolve, Premiere Pro, and After Effects." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate icon" href="/favicon.ico" />
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Vrihaspati Tiwari | Post-Production & Film Editor" />
+    <meta property="og:description" content="Finding stories, frame by frame. Narrative editing, advanced compositing, and custom post-production workflows." />
+    <meta property="og:image" content="/profile.jpg" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Vrihaspati Tiwari | Post-Production & Film Editor" />
+    <meta name="twitter:description" content="Finding stories, frame by frame. Narrative editing, advanced compositing, and custom post-production workflows." />
+    <meta name="twitter:image" content="/profile.jpg" />
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
     <style>
       :root {
@@ -16,6 +32,9 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         --white: #f9f9f9; /* Slightly off-white to match the image reference */
         --font-head: 'Inter', sans-serif;
         --font-body: 'Source Code Pro', monospace;
+      }
+      html {
+        scroll-behavior: smooth;
       }
       body {
         margin: 0;
@@ -108,23 +127,59 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         background: #e6e6e6;
       }
       
-      /* Make sure the top nav text is white since it sits on the blue hero */
-      nav {
-        background-color: var(--blue);
-        color: #fff;
-      }
-      
       /* Top Navigation */
       nav {
         display: flex;
         justify-content: space-between;
-        padding: 2rem;
+        align-items: center;
+        padding: 1.5rem 2rem;
         font-family: var(--font-head);
         text-transform: uppercase;
         font-weight: 700;
         font-size: 0.85rem;
         background-color: var(--blue);
-        color: #ffffff; /* Forces the text to be white */
+        color: #ffffff;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      }
+      .nav-brand {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        color: #ffffff;
+        text-decoration: none;
+        letter-spacing: 0.5px;
+      }
+      .nav-brand .role {
+        color: rgba(255, 255, 255, 0.7);
+        font-weight: 400;
+      }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 1.8rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .nav-links a {
+        color: #ffffff;
+        text-decoration: none;
+        letter-spacing: 0.5px;
+        transition: opacity 0.2s ease;
+      }
+      .nav-links a:hover {
+        opacity: 0.8;
+      }
+      .nav-links .nav-cta {
+        background: #ffffff;
+        color: var(--blue);
+        padding: 0.55rem 1.25rem;
+        transition: background 0.2s ease, transform 0.2s ease;
+      }
+      .nav-links .nav-cta:hover {
+        background: #e6e6e6;
+        opacity: 1;
+        transform: translateY(-1px);
       }
 
       /* Services Section (Dark Mode) */
@@ -181,7 +236,7 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         margin-top: 4rem;
       }
       
-/* About Section Side-by-Side Layout */
+      /* About Section Side-by-Side Layout */
       .about-split {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -199,18 +254,11 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         border: 1px solid #eaeaea;
         filter: grayscale(100%);
         transition: filter 0.3s ease;
+        display: block;
       }
       .about-image:hover {
         filter: grayscale(0%);
       }
-
-      @media (max-width: 768px) {
-        .about-split {
-          grid-template-columns: 1fr; /* Stacks them on mobile */
-          gap: 2rem;
-        }
-      }
-      
       
       /* Quote */
       .quote {
@@ -226,16 +274,10 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         margin: 0 auto;
       }
 
-      @media (max-width: 768px) {
-        .section-body-wrapper { justify-content: flex-start; }
-        .service-list li { flex-direction: column; gap: 1rem; }
-        .portfolio-grid { grid-template-columns: 1fr; }
-      }
       /* Footer Section */
       .site-footer {
         padding: 4rem 0;
         border-top: 1px solid #eaeaea;
-        margin-top: 4rem;
         background-color: var(--white);
       }
       .footer-content {
@@ -250,9 +292,33 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         color: var(--black);
         font-weight: 600;
         letter-spacing: 0.5px;
+        text-decoration: none;
+        transition: color 0.2s ease;
       }
-      
+      .contact-email:hover {
+        color: var(--blue);
+        text-decoration: underline;
+      }
+
       @media (max-width: 768px) {
+        nav {
+          flex-direction: column;
+          gap: 1.2rem;
+          align-items: flex-start;
+          padding: 1.5rem;
+        }
+        .nav-links {
+          gap: 1.2rem;
+          flex-wrap: wrap;
+          font-size: 0.8rem;
+        }
+        .section-body-wrapper { justify-content: flex-start; }
+        .service-list li { flex-direction: column; gap: 1rem; }
+        .portfolio-grid { grid-template-columns: 1fr; }
+        .about-split {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
         .footer-content { 
           flex-direction: column-reverse; 
           gap: 1.5rem; 
@@ -264,15 +330,23 @@ import VideoEmbed from '../components/VideoEmbed.astro';
   <body>
     
     <nav>
-      <span>Vrihaspati Tiwari</span>
-      <span>Film Editor</span>
+      <a href="#" class="nav-brand">
+        <span>Vrihaspati Tiwari</span>
+        <span class="role">/ Film Editor</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="mailto:vrihaspatitiwari@proton.me" class="nav-cta">Contact</a></li>
+      </ul>
     </nav>
 
-    <!-- Hero Section (Now matches the layout aesthetic) -->
+    <!-- Hero Section -->
     <section class="hero section-padding">
       <div class="container">
         <span class="section-label">Welcome</span>
-        <h1 class="section-title">Finding stories, frame by frame </h1>
+        <h1 class="section-title">Finding stories, frame by frame</h1>
         
         <div class="section-body-wrapper">
           <p class="section-body">
@@ -284,8 +358,8 @@ import VideoEmbed from '../components/VideoEmbed.astro';
       </div>
     </section>
 
- <!-- About Section -->
-    <section class="about section-padding">
+    <!-- About Section -->
+    <section id="about" class="about section-padding">
       <div class="container">
         <span class="section-label">About Me</span>
         <h2 class="section-title">Passionate Video Editor and Storyteller</h2>
@@ -301,14 +375,22 @@ import VideoEmbed from '../components/VideoEmbed.astro';
 
           <!-- Right Column: Image -->
           <div class="about-image-col">
-            <img src="/profile.jpg" alt="Vrihaspati Tiwari" class="about-image" />
+            <img 
+              src="/profile.jpg" 
+              alt="Vrihaspati Tiwari" 
+              class="about-image" 
+              width="1200" 
+              height="1599" 
+              loading="lazy" 
+              decoding="async" 
+            />
           </div>
         </div>
       </div>
     </section>
 
     <!-- Services Section -->
-    <section class="services section-padding">
+    <section id="services" class="services section-padding">
       <div class="container">
         <span class="section-label">My Expertise</span>
         <h2 class="section-title">Editing Solutions Tailored to Your Needs</h2>
@@ -331,7 +413,7 @@ import VideoEmbed from '../components/VideoEmbed.astro';
             <span class="service-number">02</span>
             <div class="service-content">
               <h3>Advanced Compositing</h3>
-              <p>Complex Visual Effects with color management, node-based corrections, and precise visual balancing inside DaVinci Resolve and Fusion .</p>
+              <p>Complex Visual Effects with color management, node-based corrections, and precise visual balancing inside DaVinci Resolve and Fusion.</p>
             </div>
           </li>
           <li>
@@ -345,14 +427,12 @@ import VideoEmbed from '../components/VideoEmbed.astro';
             <span class="service-number">04</span>
             <div class="service-content">
               <h3>Corporate Events</h3>
-              <p> Transforming corporate events and brand narratives into compelling visual stories. I deliver polished, high-impact video editing that elevates your professional message. </p>
+              <p>Transforming corporate events and brand narratives into compelling visual stories. I deliver polished, high-impact video editing that elevates your professional message.</p>
             </div>
           </li>
         </ul>
       </div>
     </section>
-    
-    
 
     <!-- Portfolio Section -->
     <section id="work" class="portfolio section-padding">
@@ -375,7 +455,7 @@ import VideoEmbed from '../components/VideoEmbed.astro';
           <VideoEmbed 
             title="Asus Expertbook Launch Event AV" 
             softwareTag="Premiere Pro"
-            videoUrl="https://player.vimeo.com/video/1218343736?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"" 
+            videoUrl="https://player.vimeo.com/video/1218343736?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
           />
           <VideoEmbed 
             title="Documentary Motion Graphics Short" 
@@ -390,15 +470,7 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         </div>
       </div>
     </section>
-    
-<!-- Footer Section -->
-    <footer class="site-footer">
-      <div class="container footer-content">
-        <p>&copy; 2026 Vrihaspati Tiwari. All rights reserved.</p>
-        <p class="contact-email">vrihaspatitiwari@proton.me</p>
-      </div>
-    </footer>
-    
+
     <!-- Quote Section -->
     <section class="quote section-padding">
       <div class="container">
@@ -407,6 +479,14 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         </p>
       </div>
     </section>
+
+    <!-- Footer Section -->
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <p>&copy; 2026 Vrihaspati Tiwari. All rights reserved.</p>
+        <a href="mailto:vrihaspatitiwari@proton.me" class="contact-email">vrihaspatitiwari@proton.me</a>
+      </div>
+    </footer>
 
   </body>
 </html>
