@@ -6,22 +6,22 @@ import VideoEmbed from '../components/VideoEmbed.astro';
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vrihaspati Tiwari | Post-Production & Film Editor</title>
-    <meta name="description" content="Portfolio of Vrihaspati Tiwari — Film Editor and Post-Production Specialist. Narrative editing, commercial AVs, advanced compositing, and custom workflow solutions in DaVinci Resolve, Premiere Pro, and Fusion." />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3" />
-    <link rel="alternate icon" href="/favicon.ico?v=3" />
-    <link rel="apple-touch-icon" href="/favicon.svg?v=3" />
+    <title>Vrihaspati Tiwari | Film Editor & Sound Designer</title>
+    <meta name="description" content="Portfolio of Vrihaspati Tiwari — Film Editor, Sound Designer & Post-Production Specialist. Narrative editing, commercial AVs, advanced compositing, sound design, and audio mixing in DaVinci Resolve, Premiere Pro, and Fusion." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=4" />
+    <link rel="alternate icon" href="/favicon.ico?v=4" />
+    <link rel="apple-touch-icon" href="/favicon.svg?v=4" />
 
     <!-- Open Graph / Social Sharing -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Vrihaspati Tiwari | Post-Production & Film Editor" />
-    <meta property="og:description" content="Finding stories, frame by frame. Narrative editing, commercial AVs, advanced compositing, and custom post-production workflows." />
+    <meta property="og:title" content="Vrihaspati Tiwari | Film Editor & Sound Designer" />
+    <meta property="og:description" content="Finding stories, frame by frame. Narrative editing, commercial AVs, sound design, and audio post-production." />
     <meta property="og:image" content="/profile.jpg" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Vrihaspati Tiwari | Post-Production & Film Editor" />
-    <meta name="twitter:description" content="Finding stories, frame by frame. Narrative editing, commercial AVs, advanced compositing, and custom post-production workflows." />
+    <meta name="twitter:title" content="Vrihaspati Tiwari | Film Editor & Sound Designer" />
+    <meta name="twitter:description" content="Finding stories, frame by frame. Narrative editing, commercial AVs, sound design, and audio post-production." />
     <meta name="twitter:image" content="/profile.jpg" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,12 +29,16 @@ import VideoEmbed from '../components/VideoEmbed.astro';
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
     <style>
       :root {
-        --blue: #0a1ee2; /* Royal Cobalt */
-        --blue-gradient: linear-gradient(135deg, #0b22e8 0%, #051494 100%);
-        --blue-glow: rgba(10, 30, 226, 0.22);
-        --black: #08080a;
-        --dark-grey: #111215;
-        --white: #f8f9fa;
+        --bg-body: #08090c;
+        --bg-surface: #0f1015;
+        --bg-surface-elevated: #161820;
+        --border-subtle: rgba(255, 255, 255, 0.08);
+        --border-strong: rgba(255, 255, 255, 0.16);
+        --blue: #2962ff;
+        --blue-glow: rgba(41, 98, 255, 0.35);
+        --text-primary: #f2f3f5;
+        --text-secondary: #9ea3b0;
+        --text-muted: #656a78;
         --font-head: 'Inter', sans-serif;
         --font-body: 'Source Code Pro', monospace;
       }
@@ -44,8 +48,8 @@ import VideoEmbed from '../components/VideoEmbed.astro';
       body {
         margin: 0;
         padding: 0;
-        background-color: var(--white);
-        color: var(--black);
+        background-color: var(--bg-body);
+        color: var(--text-primary);
         -webkit-font-smoothing: antialiased;
       }
       
@@ -59,7 +63,7 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         padding: 5.5rem 0;
       }
       
-      /* The Global Typography Pattern */
+      /* Typography System */
       .section-label {
         font-family: var(--font-body);
         color: var(--blue);
@@ -76,6 +80,7 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         font-weight: 800;
         line-height: 1.08;
         letter-spacing: -0.5px;
+        color: var(--text-primary);
         margin: 0 0 1.75rem 0;
         max-width: 920px;
         overflow-wrap: break-word;
@@ -89,7 +94,7 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         font-family: var(--font-body);
         font-size: 1.05rem;
         line-height: 1.65;
-        color: #444;
+        color: var(--text-secondary);
         max-width: 650px;
         margin: 0;
       }
@@ -110,23 +115,16 @@ import VideoEmbed from '../components/VideoEmbed.astro';
       .btn-blue {
         background: var(--blue);
         color: #fff;
+        box-shadow: 0 6px 20px var(--blue-glow);
       }
       .btn-blue:hover {
-        background: #0817b8;
-        box-shadow: 0 8px 24px var(--blue-glow);
-      }
-      .btn-white {
-        background: #fff;
-        color: var(--blue);
-      }
-      .btn-white:hover {
-        background: #eef1ff;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        background: #1b4fe8;
+        box-shadow: 0 8px 28px rgba(41, 98, 255, 0.5);
       }
       .btn-ghost {
-        background: transparent;
+        background: rgba(255, 255, 255, 0.05);
         color: #ffffff;
-        border: 1px solid rgba(255, 255, 255, 0.45);
+        border: 1px solid var(--border-strong);
         margin-left: 1rem;
       }
       .btn-ghost:hover {
@@ -134,27 +132,18 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         border-color: #ffffff;
       }
 
-      /* Hero Section */
+      /* Hero Section (Cinema Ambient Backlight) */
       .hero {
-        background: var(--blue-gradient);
-        color: #fff;
+        background: radial-gradient(ellipse 90% 55% at 50% -10%, rgba(41, 98, 255, 0.22), transparent 70%), var(--bg-body);
+        border-bottom: 1px solid var(--border-subtle);
       }
       .hero-tc {
         display: inline-block;
         font-family: var(--font-body);
         font-size: 0.8rem;
-        color: rgba(255, 255, 255, 0.75);
+        color: var(--blue);
         letter-spacing: 1.5px;
         margin-bottom: 0.75rem;
-      }
-      .hero .section-title {
-        color: #fff; 
-      }
-      .hero .section-label {
-        color: rgba(255, 255, 255, 0.9);
-      }
-      .hero .section-body {
-        color: rgba(255, 255, 255, 0.9);
       }
       
       /* Top Sticky Navigation */
@@ -170,9 +159,10 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         text-transform: uppercase;
         font-weight: 700;
         font-size: 0.85rem;
-        background: #091cd9;
+        background: rgba(8, 9, 12, 0.88);
+        backdrop-filter: blur(14px);
         color: #ffffff;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        border-bottom: 1px solid var(--border-subtle);
       }
       .nav-brand {
         display: flex;
@@ -187,7 +177,7 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         opacity: 0.85;
       }
       .nav-brand .role {
-        color: rgba(255, 255, 255, 0.7);
+        color: var(--text-muted);
         font-weight: 400;
       }
       .nav-availability {
@@ -196,12 +186,12 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         gap: 0.5rem;
         font-family: var(--font-body);
         font-size: 0.75rem;
-        background: rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.06);
         padding: 0.35rem 0.85rem;
         border-radius: 999px;
         color: rgba(255, 255, 255, 0.95);
         letter-spacing: 0.3px;
-        border: 1px solid rgba(255, 255, 255, 0.15);
+        border: 1px solid var(--border-subtle);
       }
       .pulse-dot {
         width: 7px;
@@ -225,31 +215,31 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         padding: 0;
       }
       .nav-links a {
-        color: #ffffff;
+        color: var(--text-secondary);
         text-decoration: none;
         letter-spacing: 0.5px;
-        transition: opacity 0.2s ease;
+        transition: color 0.2s ease;
       }
       .nav-links a:hover {
-        opacity: 0.8;
+        color: #ffffff;
       }
       .nav-links .nav-cta {
-        background: #ffffff;
-        color: var(--blue);
+        background: var(--blue);
+        color: #ffffff;
         padding: 0.55rem 1.25rem;
+        box-shadow: 0 4px 14px var(--blue-glow);
         transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
       }
       .nav-links .nav-cta:hover {
-        background: #eef1ff;
-        opacity: 1;
+        background: #1b4fe8;
         transform: translateY(-1px);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 6px 18px rgba(41, 98, 255, 0.5);
       }
 
       /* Client & Collaboration Strip */
       .client-strip {
-        background: #f0f1f4;
-        border-bottom: 1px solid #e2e4e8;
+        background: var(--bg-surface);
+        border-bottom: 1px solid var(--border-subtle);
         padding: 1.1rem 0;
         font-family: var(--font-body);
         font-size: 0.82rem;
@@ -262,7 +252,7 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         gap: 1rem;
       }
       .strip-label {
-        color: #777;
+        color: var(--text-muted);
         text-transform: uppercase;
         font-weight: 600;
         letter-spacing: 1.5px;
@@ -273,7 +263,7 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         align-items: center;
         gap: 1rem;
         flex-wrap: wrap;
-        color: #222;
+        color: var(--text-secondary);
         font-weight: 600;
         letter-spacing: 0.3px;
       }
@@ -283,6 +273,9 @@ import VideoEmbed from '../components/VideoEmbed.astro';
       }
 
       /* Portfolio Section & Filter Tabs */
+      .portfolio {
+        background: var(--bg-body);
+      }
       .filter-bar {
         display: flex;
         gap: 0.75rem;
@@ -290,8 +283,8 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         margin: 2rem 0 2.5rem 0;
       }
       .filter-btn {
-        background: #ffffff;
-        border: 1px solid #dfdfdf;
+        background: var(--bg-surface-elevated);
+        border: 1px solid var(--border-subtle);
         font-family: var(--font-body);
         font-size: 0.82rem;
         font-weight: 600;
@@ -300,24 +293,24 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         display: flex;
         align-items: center;
         gap: 0.5rem;
-        color: #333;
+        color: var(--text-secondary);
         transition: all 0.2s ease;
         text-transform: uppercase;
         letter-spacing: 0.5px;
       }
       .filter-btn:hover {
         border-color: var(--blue);
-        color: var(--blue);
+        color: #ffffff;
       }
       .filter-btn.active {
         background: var(--blue);
         border-color: var(--blue);
         color: #ffffff;
-        box-shadow: 0 4px 14px var(--blue-glow);
+        box-shadow: 0 4px 16px var(--blue-glow);
       }
       .filter-count {
         font-size: 0.72rem;
-        opacity: 0.8;
+        opacity: 0.85;
       }
       .portfolio-grid {
         display: grid;
@@ -325,24 +318,11 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         gap: 3rem 2.5rem;
       }
 
-      /* Services Section (Cinematic Dark Mode) */
+      /* Capabilities Section (Darkroom Surface) */
       .services {
-        background: var(--dark-grey);
-        color: #fff;
-        --card-title-color: #ffffff;
-        --card-tag-color: #5574ff;
-        --card-meta-color: #888;
-        --card-logline-color: #ccc;
-        --card-glow: rgba(85, 116, 255, 0.25);
-      }
-      .services .section-title {
-        color: #fff;
-      }
-      .services .section-label {
-        color: #6a88ff;
-      }
-      .services .section-body {
-        color: #aaa;
+        background: var(--bg-surface);
+        border-top: 1px solid var(--border-subtle);
+        border-bottom: 1px solid var(--border-subtle);
       }
       .service-list {
         list-style: none;
@@ -353,17 +333,17 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         display: flex;
         align-items: flex-start;
         padding: 2.2rem 0;
-        border-bottom: 1px solid #222;
+        border-bottom: 1px solid var(--border-subtle);
       }
       .service-list li:first-child {
-        border-top: 1px solid #222;
+        border-top: 1px solid var(--border-subtle);
       }
       .service-number {
         font-family: var(--font-body);
-        font-size: 1.1rem;
+        font-size: 1.05rem;
         font-weight: 600;
-        color: #6a88ff;
-        width: 100px;
+        color: var(--blue);
+        width: 105px;
         letter-spacing: 0.5px;
       }
       .service-content h3 {
@@ -371,17 +351,21 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         font-size: 1.55rem;
         font-weight: 700;
         letter-spacing: -0.3px;
+        color: var(--text-primary);
         margin: 0 0 0.6rem 0;
       }
       .service-content p {
         font-family: var(--font-body);
-        color: #888;
+        color: var(--text-secondary);
         line-height: 1.6;
         margin: 0;
-        max-width: 600px;
+        max-width: 620px;
       }
 
-      /* About Section Side-by-Side Layout with Camera HUD */
+      /* About Section */
+      .about {
+        background: var(--bg-body);
+      }
       .about-split {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -397,7 +381,7 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         position: relative;
         width: 100%;
         overflow: hidden;
-        border: 1px solid #e0e2e6;
+        border: 1px solid var(--border-strong);
         background: #000;
       }
       .about-image {
@@ -422,7 +406,7 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         font-family: var(--font-body);
         font-size: 0.72rem;
         color: rgba(255, 255, 255, 0.9);
-        background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 100%);
         pointer-events: none;
         letter-spacing: 0.8px;
         font-weight: 600;
@@ -430,7 +414,7 @@ import VideoEmbed from '../components/VideoEmbed.astro';
       .bottom-hud {
         top: auto;
         bottom: 0;
-        background: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 100%);
       }
       .rec-dot {
         display: inline-block;
@@ -447,10 +431,11 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         50% { opacity: 0.3; }
       }
       
-      /* Quote */
+      /* Quote Section */
       .quote {
-        background: var(--blue-gradient);
-        color: #fff;
+        background: var(--bg-surface);
+        border-top: 1px solid var(--border-subtle);
+        border-bottom: 1px solid var(--border-subtle);
         text-align: center;
         padding: 5rem 0;
       }
@@ -458,6 +443,7 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         font-family: var(--font-body);
         font-size: 1.4rem;
         line-height: 1.6;
+        color: var(--text-primary);
         max-width: 800px;
         margin: 0 auto;
       }
@@ -465,8 +451,7 @@ import VideoEmbed from '../components/VideoEmbed.astro';
       /* Footer Section */
       .site-footer {
         padding: 2.5rem 0;
-        border-top: 1px solid #eaeaea;
-        background-color: var(--white);
+        background-color: var(--bg-body);
       }
       .footer-content {
         display: flex;
@@ -474,10 +459,10 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         align-items: center;
         font-family: var(--font-body);
         font-size: 0.9rem;
-        color: #555;
+        color: var(--text-muted);
       }
       .contact-email {
-        color: var(--black);
+        color: var(--text-primary);
         font-weight: 600;
         letter-spacing: 0.5px;
         text-decoration: none;
@@ -536,7 +521,7 @@ import VideoEmbed from '../components/VideoEmbed.astro';
     <nav>
       <a href="#" class="nav-brand">
         <span>Vrihaspati Tiwari</span>
-        <span class="role">/ Film Editor</span>
+        <span class="role">/ Film Editor & Sound Designer</span>
       </a>
 
       <div class="nav-availability">
@@ -556,16 +541,16 @@ import VideoEmbed from '../components/VideoEmbed.astro';
     <section class="hero section-padding">
       <div class="container">
         <span class="hero-tc">TC 01:00:14:08 // 24.00 FPS</span>
-        <span class="section-label">Editorial & Post-Production</span>
+        <span class="section-label">Editorial & Sound Post-Production</span>
         <h1 class="section-title">Finding Stories, Frame by Frame</h1>
         
         <div class="section-body-wrapper">
           <p class="section-body">
-            Specializing in dramatic narrative pacing, high-energy commercial keynotes, complex visual effects compositing, and custom post-production pipelines from assembly cut to final delivery.
+            Specializing in dramatic narrative pacing, high-energy commercial keynotes, complex visual effects compositing, multi-track sound design, and full audio post-production.
           </p>
         </div>
         
-        <a href="#work" class="btn btn-white">Explore Selected Work</a>
+        <a href="#work" class="btn btn-blue">Explore Selected Work</a>
         <a href="mailto:vrihaspatitiwari@proton.me" class="btn btn-ghost">Discuss a Project</a>
       </div>
     </section>
@@ -596,7 +581,7 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         
         <div class="section-body-wrapper">
           <p class="section-body">
-            A curated showcase of commercial launch AVs, dramatic narrative cuts, documentary motion design, and cutting-edge generative cinema.
+            A curated showcase of commercial launch AVs, dramatic narrative cuts, documentary motion design, and audio post-production for generative cinema.
           </p>
         </div>
 
@@ -661,30 +646,30 @@ import VideoEmbed from '../components/VideoEmbed.astro';
           />
           <VideoEmbed 
             title="Gunda | गुंडा" 
-            softwareTag="GenAI & Editorial"
-            role="Director, Editor & AI Artist"
+            softwareTag="Editorial & Sound Design"
+            role="Editor, Sound Designer & Audio Mixing"
             client="Hindi AI Short Film"
-            logline="Mythic Varanasi crime narrative combining generative image generation, dramatic voiceover, and temporal pacing."
+            logline="Dramatic pacing, narrative assembly, dialogue editing, and atmospheric Hindi soundscape mixing."
             aspectBadge="16:9 Cinema"
             category="ai-cinema"
             videoUrl="https://www.youtube.com/embed/v1eOXEf8gDg" 
           />
           <VideoEmbed 
             title="The Monkey’s Paw" 
-            softwareTag="GenAI & Sound Design"
-            role="AI Direction & Soundscape"
+            softwareTag="Editorial & Sound Design"
+            role="Editor, Sound Designer & Audio Mixing"
             client="Horror Short Film"
-            logline="Atmospheric adaptation of the classic horror tale with layered sound design and psychological dread."
+            logline="Horror tension structuring, multi-track eerie sound effects design, dialogue balancing, and dynamic audio mix."
             aspectBadge="16:9 Cinema"
             category="ai-cinema"
             videoUrl="https://www.youtube.com/embed/p5cs63L6H6g" 
           />
           <VideoEmbed 
             title="The Country of the Blind" 
-            softwareTag="GenAI & DaVinci Resolve"
-            role="AI Cinema & Color Grading"
+            softwareTag="Editorial & Audio Mixing"
+            role="Editor, Sound Designer & Audio Mixing"
             client="Fantasy Adventure Short"
-            logline="Cinematic fantasy journey exploring an isolated valley, focused on lighting continuity and color harmony."
+            logline="Adventure timeline assembly, immersive world-building sound design, dialogue balancing, and final stereo mix."
             aspectBadge="16:9 Cinema"
             category="ai-cinema"
             videoUrl="https://www.youtube.com/embed/Vm_16spxYD0" 
@@ -693,7 +678,7 @@ import VideoEmbed from '../components/VideoEmbed.astro';
       </div>
     </section>
 
-    <!-- Services & Pipeline Section (Cinematic Dark Mode) -->
+    <!-- Capabilities & Studio Pipeline Section -->
     <section id="services" class="services section-padding">
       <div class="container">
         <span class="section-label">Capabilities & Studio Pipeline</span>
@@ -716,19 +701,26 @@ import VideoEmbed from '../components/VideoEmbed.astro';
           <li>
             <span class="service-number">[ 02:00 ]</span>
             <div class="service-content">
+              <h3>Sound Design & Audio Mixing</h3>
+              <p>Dialogue editing, multi-track Foley/SFX design, atmospheric world-building, audio restoration, and broadcast/web loudness-compliant stereo mixing.</p>
+            </div>
+          </li>
+          <li>
+            <span class="service-number">[ 03:00 ]</span>
+            <div class="service-content">
               <h3>Advanced Compositing & VFX</h3>
               <p>Complex visual effects, node-based corrections, screen replacements, paint/roto, and seamless visual balancing inside Fusion and DaVinci Resolve.</p>
             </div>
           </li>
           <li>
-            <span class="service-number">[ 03:00 ]</span>
+            <span class="service-number">[ 04:00 ]</span>
             <div class="service-content">
               <h3>Motion Graphics & Kinetic Design</h3>
               <p>Dynamic title design, lower thirds, brand reveal animations, and forensic documentary infographics built inside After Effects and Fusion.</p>
             </div>
           </li>
           <li>
-            <span class="service-number">[ 04:00 ]</span>
+            <span class="service-number">[ 05:00 ]</span>
             <div class="service-content">
               <h3>Remote Pipeline & High-Speed Turnaround</h3>
               <p>Calibrated 10-bit color reference monitoring, ACES / YRGB color management, Blackmagic Cloud collaboration, Frame.io review cycles, and ProRes/DCP masters over a 1Gbps fiber pipeline.</p>
@@ -748,7 +740,7 @@ import VideoEmbed from '../components/VideoEmbed.astro';
           <!-- Left Column: Text & Button -->
           <div class="about-text">
             <p class="section-body">
-              I'm a dedicated video editor with a keen eye for detail and a deep passion for storytelling. Whether it's a commercial, a social media clip, an AI-driven short, or a full-length film, I bring creativity, precision, and emotion to every project. Beyond the timeline, I write stories and consume audiobooks.
+              I'm a dedicated film editor and sound designer with a keen eye for visual pacing, subtext, and auditory atmosphere. Whether it's a high-energy commercial keynote, an indie short film, a motion design infographic, or an AI-driven cinematic piece, I bring precision and dramatic emotion to every project. Beyond the edit bay, I write stories and consume audiobooks.
             </p>
             <a href="mailto:vrihaspatitiwari@proton.me" class="btn btn-blue">Contact Me</a>
           </div>
@@ -783,7 +775,7 @@ import VideoEmbed from '../components/VideoEmbed.astro';
     <section class="quote section-padding">
       <div class="container">
         <p class="quote-text">
-          "Technical precision combined with a deep understanding of pacing and narrative structure."
+          "Technical precision combined with a deep understanding of pacing, sound, and narrative structure."
         </p>
       </div>
     </section>
