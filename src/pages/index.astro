@@ -8,9 +8,9 @@ import VideoEmbed from '../components/VideoEmbed.astro';
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vrihaspati Tiwari | Post-Production & Film Editor</title>
     <meta name="description" content="Portfolio of Vrihaspati Tiwari — Film Editor and Post-Production Specialist. Narrative editing, commercial AVs, advanced compositing, and custom workflow solutions in DaVinci Resolve, Premiere Pro, and Fusion." />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
-    <link rel="alternate icon" href="/favicon.ico?v=2" />
-    <link rel="apple-touch-icon" href="/favicon.svg?v=2" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3" />
+    <link rel="alternate icon" href="/favicon.ico?v=3" />
+    <link rel="apple-touch-icon" href="/favicon.svg?v=3" />
 
     <!-- Open Graph / Social Sharing -->
     <meta property="og:type" content="website" />
@@ -26,13 +26,15 @@ import VideoEmbed from '../components/VideoEmbed.astro';
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
     <style>
       :root {
-        --blue: #0011ff;
-        --black: #050505;
-        --dark-grey: #111111;
-        --white: #f9f9f9;
+        --blue: #0a1ee2; /* Royal Cobalt */
+        --blue-gradient: linear-gradient(135deg, #0b22e8 0%, #051494 100%);
+        --blue-glow: rgba(10, 30, 226, 0.22);
+        --black: #08080a;
+        --dark-grey: #111215;
+        --white: #f8f9fa;
         --font-head: 'Inter', sans-serif;
         --font-body: 'Source Code Pro', monospace;
       }
@@ -59,12 +61,12 @@ import VideoEmbed from '../components/VideoEmbed.astro';
       
       /* The Global Typography Pattern */
       .section-label {
-        font-family: var(--font-head);
+        font-family: var(--font-body);
         color: var(--blue);
-        font-size: 0.85rem;
-        font-weight: 700;
+        font-size: 0.8rem;
+        font-weight: 600;
         text-transform: uppercase;
-        letter-spacing: 1.5px;
+        letter-spacing: 2px;
         margin-bottom: 1rem;
         display: block;
       }
@@ -72,10 +74,10 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         font-family: var(--font-head);
         font-size: clamp(2.3rem, 4.5vw, 4.2rem);
         font-weight: 800;
-        text-transform: uppercase;
-        line-height: 1.05;
+        line-height: 1.08;
+        letter-spacing: -0.5px;
         margin: 0 0 1.75rem 0;
-        max-width: 900px;
+        max-width: 920px;
         overflow-wrap: break-word;
       }
       .section-body-wrapper {
@@ -100,7 +102,7 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         text-decoration: none;
         letter-spacing: 1px;
         font-size: 0.85rem;
-        transition: background 0.2s, transform 0.2s, border-color 0.2s;
+        transition: background 0.2s, transform 0.2s, box-shadow 0.2s, border-color 0.2s;
       }
       .btn:hover {
         transform: translateY(-2px);
@@ -110,42 +112,46 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         color: #fff;
       }
       .btn-blue:hover {
-        background: #000cbf;
+        background: #0817b8;
+        box-shadow: 0 8px 24px var(--blue-glow);
       }
       .btn-white {
         background: #fff;
         color: var(--blue);
       }
       .btn-white:hover {
-        background: #e6e6e6;
+        background: #eef1ff;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
       }
       .btn-ghost {
         background: transparent;
         color: #ffffff;
-        border: 1px solid rgba(255, 255, 255, 0.4);
+        border: 1px solid rgba(255, 255, 255, 0.45);
         margin-left: 1rem;
       }
       .btn-ghost:hover {
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.12);
         border-color: #ffffff;
       }
 
       /* Hero Section */
       .hero {
-        background-color: var(--blue);
+        background: var(--blue-gradient);
         color: #fff;
       }
       .hero-tc {
         display: inline-block;
         font-family: var(--font-body);
         font-size: 0.8rem;
-        color: rgba(255, 255, 255, 0.7);
-        letter-spacing: 1px;
+        color: rgba(255, 255, 255, 0.75);
+        letter-spacing: 1.5px;
         margin-bottom: 0.75rem;
       }
-      .hero .section-title,
-      .hero .section-label {
+      .hero .section-title {
         color: #fff; 
+      }
+      .hero .section-label {
+        color: rgba(255, 255, 255, 0.9);
       }
       .hero .section-body {
         color: rgba(255, 255, 255, 0.9);
@@ -164,9 +170,9 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         text-transform: uppercase;
         font-weight: 700;
         font-size: 0.85rem;
-        background-color: var(--blue);
+        background: #091cd9;
         color: #ffffff;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
       }
       .nav-brand {
         display: flex;
@@ -191,10 +197,11 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         font-family: var(--font-body);
         font-size: 0.75rem;
         background: rgba(255, 255, 255, 0.12);
-        padding: 0.35rem 0.75rem;
+        padding: 0.35rem 0.85rem;
         border-radius: 999px;
         color: rgba(255, 255, 255, 0.95);
         letter-spacing: 0.3px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
       }
       .pulse-dot {
         width: 7px;
@@ -230,12 +237,49 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         background: #ffffff;
         color: var(--blue);
         padding: 0.55rem 1.25rem;
-        transition: background 0.2s ease, transform 0.2s ease;
+        transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
       }
       .nav-links .nav-cta:hover {
-        background: #e6e6e6;
+        background: #eef1ff;
         opacity: 1;
         transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      /* Client & Collaboration Strip */
+      .client-strip {
+        background: #f0f1f4;
+        border-bottom: 1px solid #e2e4e8;
+        padding: 1.1rem 0;
+        font-family: var(--font-body);
+        font-size: 0.82rem;
+      }
+      .client-strip-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      .strip-label {
+        color: #777;
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        font-size: 0.72rem;
+      }
+      .strip-items {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        color: #222;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+      }
+      .strip-dot {
+        color: var(--blue);
+        font-weight: 800;
       }
 
       /* Portfolio Section & Filter Tabs */
@@ -247,11 +291,11 @@ import VideoEmbed from '../components/VideoEmbed.astro';
       }
       .filter-btn {
         background: #ffffff;
-        border: 1px solid #e0e0e0;
+        border: 1px solid #dfdfdf;
         font-family: var(--font-body);
         font-size: 0.82rem;
         font-weight: 600;
-        padding: 0.55rem 1.1rem;
+        padding: 0.55rem 1.15rem;
         cursor: pointer;
         display: flex;
         align-items: center;
@@ -269,6 +313,7 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         background: var(--blue);
         border-color: var(--blue);
         color: #ffffff;
+        box-shadow: 0 4px 14px var(--blue-glow);
       }
       .filter-count {
         font-size: 0.72rem;
@@ -284,9 +329,17 @@ import VideoEmbed from '../components/VideoEmbed.astro';
       .services {
         background: var(--dark-grey);
         color: #fff;
+        --card-title-color: #ffffff;
+        --card-tag-color: #5574ff;
+        --card-meta-color: #888;
+        --card-logline-color: #ccc;
+        --card-glow: rgba(85, 116, 255, 0.25);
       }
       .services .section-title {
         color: #fff;
+      }
+      .services .section-label {
+        color: #6a88ff;
       }
       .services .section-body {
         color: #aaa;
@@ -307,15 +360,17 @@ import VideoEmbed from '../components/VideoEmbed.astro';
       }
       .service-number {
         font-family: var(--font-body);
-        font-size: 1.4rem;
-        color: var(--blue);
-        width: 70px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #6a88ff;
+        width: 100px;
+        letter-spacing: 0.5px;
       }
       .service-content h3 {
         font-family: var(--font-head);
-        font-size: 1.6rem;
-        font-weight: 800;
-        text-transform: uppercase;
+        font-size: 1.55rem;
+        font-weight: 700;
+        letter-spacing: -0.3px;
         margin: 0 0 0.6rem 0;
       }
       .service-content p {
@@ -326,7 +381,7 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         max-width: 600px;
       }
 
-      /* About Section Side-by-Side Layout */
+      /* About Section Side-by-Side Layout with Camera HUD */
       .about-split {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -338,21 +393,63 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         max-width: 100%;
         margin-bottom: 2rem;
       }
+      .photo-frame {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        border: 1px solid #e0e2e6;
+        background: #000;
+      }
       .about-image {
         width: 100%;
         height: auto;
-        border: 1px solid #eaeaea;
         filter: grayscale(100%);
-        transition: filter 0.3s ease;
+        transition: filter 0.4s ease, transform 0.4s ease;
         display: block;
       }
-      .about-image:hover {
+      .photo-frame:hover .about-image {
         filter: grayscale(0%);
+        transform: scale(1.02);
+      }
+      .camera-hud {
+        position: absolute;
+        left: 0;
+        right: 0;
+        padding: 0.75rem 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: var(--font-body);
+        font-size: 0.72rem;
+        color: rgba(255, 255, 255, 0.9);
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+        pointer-events: none;
+        letter-spacing: 0.8px;
+        font-weight: 600;
+      }
+      .bottom-hud {
+        top: auto;
+        bottom: 0;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+      }
+      .rec-dot {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #ff2222;
+        box-shadow: 0 0 8px #ff2222;
+        margin-right: 0.35rem;
+        animation: recBlink 1.5s infinite;
+      }
+      @keyframes recBlink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.3; }
       }
       
       /* Quote */
       .quote {
-        background: var(--blue);
+        background: var(--blue-gradient);
         color: #fff;
         text-align: center;
         padding: 5rem 0;
@@ -413,8 +510,13 @@ import VideoEmbed from '../components/VideoEmbed.astro';
           margin-top: 0.75rem;
           display: block;
         }
+        .client-strip-inner {
+          flex-direction: column;
+          align-items: flex-start;
+        }
         .section-body-wrapper { justify-content: flex-start; margin-bottom: 1.5rem; }
         .service-list li { flex-direction: column; gap: 0.75rem; padding: 1.5rem 0; }
+        .service-number { width: auto; }
         .portfolio-grid { grid-template-columns: 1fr; gap: 2rem; margin-top: 1.5rem; }
         .about-split {
           grid-template-columns: 1fr;
@@ -455,7 +557,7 @@ import VideoEmbed from '../components/VideoEmbed.astro';
       <div class="container">
         <span class="hero-tc">TC 01:00:14:08 // 24.00 FPS</span>
         <span class="section-label">Editorial & Post-Production</span>
-        <h1 class="section-title">Finding stories, frame by frame</h1>
+        <h1 class="section-title">Finding Stories, Frame by Frame</h1>
         
         <div class="section-body-wrapper">
           <p class="section-body">
@@ -468,7 +570,25 @@ import VideoEmbed from '../components/VideoEmbed.astro';
       </div>
     </section>
 
-    <!-- Selected Work Section (Brought right after Hero) -->
+    <!-- Client & Collaboration Strip -->
+    <div class="client-strip">
+      <div class="container client-strip-inner">
+        <span class="strip-label">Selected Collaborations & Toolset</span>
+        <div class="strip-items">
+          <span>Asus India</span>
+          <span class="strip-dot">•</span>
+          <span>Qaafilah Studios</span>
+          <span class="strip-dot">•</span>
+          <span>DaVinci Resolve Studio</span>
+          <span class="strip-dot">•</span>
+          <span>Blackmagic Fusion</span>
+          <span class="strip-dot">•</span>
+          <span>Adobe Premiere Pro</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Selected Work Section -->
     <section id="work" class="portfolio section-padding">
       <div class="container">
         <span class="section-label">Selected Portfolio</span>
@@ -587,28 +707,28 @@ import VideoEmbed from '../components/VideoEmbed.astro';
 
         <ul class="service-list">
           <li>
-            <span class="service-number">01</span>
+            <span class="service-number">[ 01:00 ]</span>
             <div class="service-content">
               <h3>Narrative & Editorial Assembly</h3>
               <p>End-to-end editorial structuring, dialogue rhythm, dramatic tension, and offline assembly tailored for maximum audience impact.</p>
             </div>
           </li>
           <li>
-            <span class="service-number">02</span>
+            <span class="service-number">[ 02:00 ]</span>
             <div class="service-content">
               <h3>Advanced Compositing & VFX</h3>
               <p>Complex visual effects, node-based corrections, screen replacements, paint/roto, and seamless visual balancing inside Fusion and DaVinci Resolve.</p>
             </div>
           </li>
           <li>
-            <span class="service-number">03</span>
+            <span class="service-number">[ 03:00 ]</span>
             <div class="service-content">
               <h3>Motion Graphics & Kinetic Design</h3>
               <p>Dynamic title design, lower thirds, brand reveal animations, and forensic documentary infographics built inside After Effects and Fusion.</p>
             </div>
           </li>
           <li>
-            <span class="service-number">04</span>
+            <span class="service-number">[ 04:00 ]</span>
             <div class="service-content">
               <h3>Remote Pipeline & High-Speed Turnaround</h3>
               <p>Calibrated 10-bit color reference monitoring, ACES / YRGB color management, Blackmagic Cloud collaboration, Frame.io review cycles, and ProRes/DCP masters over a 1Gbps fiber pipeline.</p>
@@ -618,7 +738,7 @@ import VideoEmbed from '../components/VideoEmbed.astro';
       </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About Section with Camera HUD -->
     <section id="about" class="about section-padding">
       <div class="container">
         <span class="section-label">About Me</span>
@@ -633,17 +753,27 @@ import VideoEmbed from '../components/VideoEmbed.astro';
             <a href="mailto:vrihaspatitiwari@proton.me" class="btn btn-blue">Contact Me</a>
           </div>
 
-          <!-- Right Column: Image -->
+          <!-- Right Column: Image with Camera Slate HUD -->
           <div class="about-image-col">
-            <img 
-              src="/profile.jpg" 
-              alt="Vrihaspati Tiwari" 
-              class="about-image" 
-              width="1200" 
-              height="1599" 
-              loading="lazy" 
-              decoding="async" 
-            />
+            <div class="photo-frame">
+              <img 
+                src="/profile.jpg" 
+                alt="Vrihaspati Tiwari" 
+                class="about-image" 
+                width="1200" 
+                height="1599" 
+                loading="lazy" 
+                decoding="async" 
+              />
+              <div class="camera-hud top-hud">
+                <span class="hud-item"><span class="rec-dot"></span> REC</span>
+                <span class="hud-item">CAM A // 24.00 FPS</span>
+              </div>
+              <div class="camera-hud bottom-hud">
+                <span class="hud-item">5600K // 1/48</span>
+                <span class="hud-item">PRORES 422 HQ</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
