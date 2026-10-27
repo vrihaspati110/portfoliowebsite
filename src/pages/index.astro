@@ -73,6 +73,7 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         line-height: 1.05;
         margin: 0 0 2.5rem 0;
         max-width: 900px;
+        overflow-wrap: break-word;
       }
       .section-body-wrapper {
         display: flex;
@@ -251,7 +252,7 @@ import VideoEmbed from '../components/VideoEmbed.astro';
       /* Portfolio Grid */
       .portfolio-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
         gap: 4rem 3rem;
         margin-top: 4rem;
       }
@@ -306,7 +307,7 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         align-items: center;
         font-family: var(--font-body); /* Uses the monospace font */
         font-size: 0.9rem;
-        color: #888;
+        color: #555;
       }
       .contact-email {
         color: var(--black);
@@ -321,6 +322,7 @@ import VideoEmbed from '../components/VideoEmbed.astro';
       }
 
       @media (max-width: 768px) {
+        .section-padding { padding: 4.5rem 0; }
         nav {
           flex-direction: column;
           gap: 1.2rem;
