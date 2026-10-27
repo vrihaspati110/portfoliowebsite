@@ -57,14 +57,14 @@ const { videoUrl, title, softwareTag } = Astro.props;
     margin: 0 0 0.6rem 0;
     font-size: 1.2rem;
     font-weight: 800;
-    color: #111;
+    color: var(--card-title-color, #111);
     text-transform: uppercase;
     font-family: 'Inter', sans-serif;
   }
   .tag {
     font-size: 0.85rem;
     font-weight: 600;
-    color: #0011ff;
+    color: var(--card-tag-color, #0011ff);
     font-family: 'Source Code Pro', monospace;
     text-transform: uppercase;
   }

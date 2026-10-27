@@ -228,6 +228,26 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         max-width: 500px;
       }
 
+      /* AI Short Films Section (Cinematic Dark Mode) */
+      .ai-films {
+        background: var(--dark-grey);
+        color: #fff;
+        --card-title-color: #ffffff;
+        --card-tag-color: #5572ff;
+      }
+      .ai-films .section-title {
+        color: #fff;
+      }
+      .ai-films .section-body {
+        color: #aaa;
+      }
+      .ai-films-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 3.5rem 2.5rem;
+        margin-top: 4rem;
+      }
+
       /* Portfolio Grid */
       .portfolio-grid {
         display: grid;
@@ -315,6 +335,7 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         .section-body-wrapper { justify-content: flex-start; }
         .service-list li { flex-direction: column; gap: 1rem; }
         .portfolio-grid { grid-template-columns: 1fr; }
+        .ai-films-grid { grid-template-columns: 1fr; }
         .about-split {
           grid-template-columns: 1fr;
           gap: 2rem;
@@ -338,6 +359,7 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#work">Work</a></li>
+        <li><a href="#ai-films">AI Films</a></li>
         <li><a href="mailto:vrihaspatitiwari@proton.me" class="nav-cta">Contact</a></li>
       </ul>
     </nav>
@@ -466,6 +488,38 @@ import VideoEmbed from '../components/VideoEmbed.astro';
             title="Trailers And Promo" 
             softwareTag="DaVinci Resolve"
             videoUrl="https://www.youtube.com/embed/m8sACMMiOHM?si=6M2KXCfOUCD4TesE" 
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- AI Short Films Section -->
+    <section id="ai-films" class="ai-films section-padding">
+      <div class="container">
+        <span class="section-label">Generative Cinema</span>
+        <h2 class="section-title">AI Short Films & Experimental Narratives</h2>
+        
+        <div class="section-body-wrapper">
+          <p class="section-body">
+            Pushing the boundaries of visual storytelling—combining generative AI cinematic tools with classic dramatic editorial pacing, color design, and soundscapes.
+          </p>
+        </div>
+        
+        <div class="ai-films-grid">
+          <VideoEmbed 
+            title="Gunda | गुंडा" 
+            softwareTag="GenAI & Editorial"
+            videoUrl="https://www.youtube.com/embed/v1eOXEf8gDg" 
+          />
+          <VideoEmbed 
+            title="The Monkey’s Paw" 
+            softwareTag="AI Horror Short"
+            videoUrl="https://www.youtube.com/embed/p5cs63L6H6g" 
+          />
+          <VideoEmbed 
+            title="The Country of the Blind" 
+            softwareTag="AI Fantasy Adventure"
+            videoUrl="https://www.youtube.com/embed/Vm_16spxYD0" 
           />
         </div>
       </div>
