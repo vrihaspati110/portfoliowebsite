@@ -429,6 +429,144 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         font-size: 0.82rem;
       }
 
+      /* Contact / Inquiry Section */
+      .contact {
+        background-color: #f6f8fb;
+        border-top: 1px solid #e5e8ee;
+      }
+      .contact-card {
+        background: #ffffff;
+        border: 1px solid #e1e4ea;
+        border-radius: 8px;
+        padding: 3rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+        max-width: 860px;
+        margin: 0 auto;
+      }
+      .inquiry-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.75rem;
+      }
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem 1.75rem;
+      }
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      .form-group.full-width {
+        grid-column: 1 / -1;
+      }
+      .form-group label {
+        font-family: var(--font-body);
+        font-size: 0.82rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.6px;
+        color: #2c2f38;
+      }
+      .form-group label .required {
+        color: var(--blue);
+      }
+      .form-group input,
+      .form-group select,
+      .form-group textarea {
+        font-family: var(--font-body);
+        font-size: 0.95rem;
+        color: var(--black);
+        background: #fafbfe;
+        border: 1px solid #d8dce6;
+        border-radius: 4px;
+        padding: 0.85rem 1rem;
+        outline: none;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+        box-sizing: border-box;
+        width: 100%;
+      }
+      .form-group select {
+        appearance: none;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232c2f38' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: right 1rem center;
+        background-size: 1em;
+        padding-right: 2.5rem;
+        cursor: pointer;
+      }
+      .form-group input:focus,
+      .form-group select:focus,
+      .form-group textarea:focus {
+        background: #ffffff;
+        border-color: var(--blue);
+        box-shadow: 0 0 0 3px rgba(10, 30, 226, 0.12);
+      }
+      .form-group textarea {
+        resize: vertical;
+        min-height: 120px;
+      }
+      .form-actions {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        padding-top: 0.5rem;
+      }
+      .form-actions .btn {
+        border: none;
+        cursor: pointer;
+        padding: 0.95rem 2.2rem;
+      }
+      .form-actions .btn:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+      }
+      .direct-email-note {
+        margin: 0;
+        font-family: var(--font-body);
+        font-size: 0.88rem;
+        color: #6a6e7a;
+      }
+      .direct-email-note a {
+        color: var(--blue);
+        text-decoration: underline;
+        font-weight: 600;
+      }
+      .direct-email-note a:hover {
+        color: #0817b8;
+      }
+      .form-alert {
+        padding: 1rem 1.25rem;
+        border-radius: 4px;
+        font-family: var(--font-body);
+        font-size: 0.92rem;
+        line-height: 1.5;
+      }
+      .alert-success {
+        background: #edf8f2;
+        border: 1px solid #b7e3ca;
+        color: #126338;
+      }
+      .alert-success code {
+        background: rgba(18, 99, 56, 0.1);
+        padding: 0.15rem 0.4rem;
+        border-radius: 3px;
+        font-weight: 600;
+      }
+      .alert-error {
+        background: #fdf0f0;
+        border: 1px solid #f6bebe;
+        color: #a81c1c;
+      }
+      .alert-error a {
+        color: #a81c1c;
+        text-decoration: underline;
+        font-weight: 600;
+      }
+
       /* Footer Section */
       .site-footer {
         padding: 2.5rem 0;
@@ -494,6 +632,25 @@ import VideoEmbed from '../components/VideoEmbed.astro';
           gap: 1.2rem; 
           text-align: center; 
         }
+        .contact-card {
+          padding: 2rem 1.25rem;
+        }
+        .form-grid {
+          grid-template-columns: 1fr;
+          gap: 1.25rem;
+        }
+        .form-actions {
+          flex-direction: column;
+          align-items: stretch;
+          gap: 1rem;
+        }
+        .form-actions .btn {
+          width: 100%;
+          text-align: center;
+        }
+        .direct-email-note {
+          text-align: center;
+        }
       }
     </style>
   </head>
@@ -515,7 +672,7 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         <li><a href="#ai-content">AI Content</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="mailto:vrihaspatitiwari@proton.me" class="nav-cta">Contact</a></li>
+        <li><a href="#contact" class="nav-cta">Inquire</a></li>
       </ul>
     </nav>
 
@@ -532,7 +689,7 @@ import VideoEmbed from '../components/VideoEmbed.astro';
         </div>
         
         <a href="#work" class="btn btn-white">View Selected Work</a>
-        <a href="mailto:vrihaspatitiwari@proton.me" class="btn btn-ghost">Get in Touch</a>
+        <a href="#contact" class="btn btn-ghost">Get in Touch</a>
       </div>
     </section>
 
@@ -744,7 +901,7 @@ import VideoEmbed from '../components/VideoEmbed.astro';
             <p class="section-body">
               I handle both picture and sound — focusing on tight dialogue cuts, clean audio, and story rhythm. Outside the edit suite, I write fiction and listen to audiobooks, which gives me a bit more insight into the pacing and structure of a story during an edit.
             </p>
-            <a href="mailto:vrihaspatitiwari@proton.me" class="btn btn-blue">Get in Touch</a>
+            <a href="#contact" class="btn btn-blue">Get in Touch</a>
           </div>
 
           <!-- Right Column: Profile Image -->
@@ -778,6 +935,85 @@ import VideoEmbed from '../components/VideoEmbed.astro';
       </div>
     </section>
 
+    <!-- Contact / Inquiry Section -->
+    <section id="contact" class="contact section-padding">
+      <div class="container">
+        <span class="section-label">Contact & Inquiries</span>
+        <h2 class="section-title">Start an Inquiry</h2>
+        
+        <div class="section-body-wrapper">
+          <p class="section-body">
+            Have a narrative short, commercial AV, comedy podcast, or creative edit in the pipeline? Share your project details below or email directly.
+          </p>
+        </div>
+
+        <div class="contact-card">
+          <form id="inquiry-form" class="inquiry-form" action="https://formsubmit.co/vrihaspatitiwari@proton.me" method="POST">
+            <!-- FormSubmit Configuration -->
+            <input type="hidden" name="_subject" value="New Project Inquiry — Vrihaspati Tiwari Portfolio" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <!-- Bot Spam Honeypot -->
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="name">Your Name <span class="required">*</span></label>
+                <input type="text" id="name" name="name" required placeholder="e.g. Vikram Sharma" />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required placeholder="name@domain.com" />
+              </div>
+
+              <div class="form-group">
+                <label for="project-type">Project Format</label>
+                <select id="project-type" name="project_type">
+                  <option value="" disabled selected>Select format...</option>
+                  <option value="Narrative Film / Fiction Short">Narrative Film / Fiction Short</option>
+                  <option value="Commercial / Brand AV">Commercial / Brand AV</option>
+                  <option value="Comedy Drama / Podcast">Comedy Drama / Podcast</option>
+                  <option value="AI Content / Music Video">AI Content / Music Video</option>
+                  <option value="Motion Graphics / Documentary">Motion Graphics / Documentary</option>
+                  <option value="Sound Design & Audio Mix">Sound Design & Mix</option>
+                  <option value="Other Creative Work">Other Creative Work</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="timeline">Timeline / Target Date</label>
+                <input type="text" id="timeline" name="timeline" placeholder="e.g. Next 3–4 weeks, Immediate" />
+              </div>
+
+              <div class="form-group full-width">
+                <label for="message">Project Scope & Details <span class="required">*</span></label>
+                <textarea id="message" name="message" rows="5" required placeholder="Briefly describe the story, footage status, deliverables, or reference links..."></textarea>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" id="submit-btn" class="btn btn-blue">
+                <span class="btn-text">Send Inquiry</span>
+                <span class="btn-spinner" style="display: none;">Sending...</span>
+              </button>
+              <p class="direct-email-note">
+                Prefer direct email? Reach out at <a href="mailto:vrihaspatitiwari@proton.me">vrihaspatitiwari@proton.me</a>
+              </p>
+            </div>
+
+            <!-- Submission Feedback -->
+            <div id="form-success" class="form-alert alert-success" style="display: none;">
+              <strong>Inquiry Sent!</strong> Thank you for reaching out. Your message has been sent to <code>vrihaspatitiwari@proton.me</code>, and I will get back to you shortly.
+            </div>
+            <div id="form-error" class="form-alert alert-error" style="display: none;">
+              <strong>Unable to send automatically:</strong> Please send your inquiry directly to <a href="mailto:vrihaspatitiwari@proton.me">vrihaspatitiwari@proton.me</a>.
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
     <!-- Key Clients & Tools Strip -->
     <div class="client-strip">
       <div class="container client-strip-inner">
@@ -804,8 +1040,9 @@ import VideoEmbed from '../components/VideoEmbed.astro';
       </div>
     </footer>
 
-    <!-- Interactive Client-side Filter Script -->
+    <!-- Interactive Client-side Scripts -->
     <script>
+      // Filter Bar Interaction
       const filterButtons = document.querySelectorAll('.filter-btn');
       const cards = document.querySelectorAll('#work .portfolio-card');
 
@@ -826,6 +1063,65 @@ import VideoEmbed from '../components/VideoEmbed.astro';
           });
         });
       });
+
+      // Inquiry Form Submission (FormSubmit via AJAX with fallback)
+      const inquiryForm = document.getElementById('inquiry-form') as HTMLFormElement | null;
+      if (inquiryForm) {
+        const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement | null;
+        const btnText = submitBtn?.querySelector('.btn-text') as HTMLElement | null;
+        const btnSpinner = submitBtn?.querySelector('.btn-spinner') as HTMLElement | null;
+        const successAlert = document.getElementById('form-success') as HTMLElement | null;
+        const errorAlert = document.getElementById('form-error') as HTMLElement | null;
+
+        inquiryForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          if (successAlert) successAlert.style.display = 'none';
+          if (errorAlert) errorAlert.style.display = 'none';
+
+          if (submitBtn) submitBtn.disabled = true;
+          if (btnText) btnText.style.display = 'none';
+          if (btnSpinner) btnSpinner.style.display = 'inline';
+
+          const formData = new FormData(inquiryForm);
+          const payload: Record<string, any> = {};
+          formData.forEach((value, key) => {
+            if (key !== '_honey') {
+              payload[key] = value;
+            }
+          });
+
+          try {
+            const res = await fetch('https://formsubmit.co/ajax/vrihaspatitiwari@proton.me', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+              },
+              body: JSON.stringify(payload)
+            });
+
+            const result = await res.json();
+            if (res.ok && (result.success === 'true' || result.success === true)) {
+              if (successAlert) successAlert.style.display = 'block';
+              inquiryForm.reset();
+            } else if (result.message && result.message.toLowerCase().includes('activate')) {
+              if (successAlert) {
+                successAlert.innerHTML = '<strong>Almost there:</strong> FormSubmit dispatched a one-time activation link to <code>vrihaspatitiwari@proton.me</code>. Please confirm it in your inbox once to activate incoming inquiries.';
+                successAlert.style.display = 'block';
+              }
+            } else {
+              throw new Error(result.message || 'Submission error');
+            }
+          } catch (err) {
+            console.error('Inquiry form submission error:', err);
+            if (errorAlert) errorAlert.style.display = 'block';
+          } finally {
+            if (submitBtn) submitBtn.disabled = false;
+            if (btnText) btnText.style.display = 'inline';
+            if (btnSpinner) btnSpinner.style.display = 'none';
+          }
+        });
+      }
     </script>
 
   </body>
